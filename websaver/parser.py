@@ -40,11 +40,11 @@ def crawling(web_url):
     return {'title':title, 'author':author, 'food_ingredient':food_ingredient, 'picture':picture, 'link':link}
 
 if __name__=='__main__':
-    for i in range(6912636,6912646):
+    for i in range(6912546,6912646):
         web_url="http://www.10000recipe.com/recipe/"+str(i)
         try:
             blog_data_dict = crawling(web_url)
-            #print(blog_data_dict)
+            print(blog_data_dict)
         except:
             continue
         Recipe(title=blog_data_dict['title'],author=blog_data_dict['author'],food_ingredient=blog_data_dict['food_ingredient'],
