@@ -1,5 +1,6 @@
-from django.db.models import Model, CharField, URLField, JSONField
+from django.db.models import Model, CharField, URLField
 from django_mysql.models import ListCharField
+from jsonfield import JSONField
 # Create your models here.
 class Recipe(Model):
     title=CharField(max_length=200)
@@ -27,3 +28,6 @@ class User(Model):
         size=20,
         max_length=(20 * 11))
     food_ingredient=JSONField() #dictionary
+
+    def __str__(self):
+        return self.name

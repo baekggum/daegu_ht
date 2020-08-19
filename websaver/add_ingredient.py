@@ -8,6 +8,7 @@ django.setup()
 from parsed_data.models import Recipe, Ingredient
 
 if __name__=='__main__':
+    #Ingredient.objects.all().delete()
     all_ingredient=[]
     for i in Recipe.objects.all():
         for j in i.food_ingredient:
