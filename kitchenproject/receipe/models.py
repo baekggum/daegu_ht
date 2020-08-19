@@ -20,14 +20,3 @@ class Ingredient(Model):
     
     def __str__(self):
         return self.name
-
-class User(Model):
-    name=CharField(max_length=20)
-    food_seasoning=ListCharField(
-        base_field=CharField(max_length=10),
-        size=20,
-        max_length=(20 * 11))
-    food_ingredient=JSONField() #dictionary
-
-    def __str__(self):
-        return self.name
