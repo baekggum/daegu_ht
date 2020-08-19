@@ -6,7 +6,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "kitchenproject.settings")
 import django
 django.setup()
 
-from receipe.models import Recipe, Ingredient, User
+from blog.models import User
 User(name='test',food_seasoning=['소금','후추'],food_ingredient={'당근':'2020.8.23'}).save()
 for i in User.objects.all():
     print(i.food_ingredient['당근'])
