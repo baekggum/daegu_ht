@@ -8,12 +8,27 @@ django.setup()
 from parsed_data.models import Recipe, Ingredient
 
 if __name__=='__main__':
-    #Ingredient.objects.all().delete()
+    Ingredient.objects.all().delete()
     all_ingredient=[]
     for i in Recipe.objects.all():
         for j in i.food_ingredient:
+            if '약간' in j:
+                L=j.split('약간')
+                j=L[0].rstrip()
+            elif '조금' in j:
+                L=j.split('조금')
+                j=L[0].rstrip()
+            elif '적당량' in j:
+                L=j.split('적당량')
+                j=L[0].rstrip()
             all_ingredient.append(j)
     all_ingredient=list(set(all_ingredient))
     for i in all_ingredient:
-        Ingredient(name=i).save()
+        '''
+        if type=='y':
+            Ingredient(name=i,type=True).save()
+        else:
+            Ingredient(name=i,type=False).save()
+        '''
+        Ingredient(name=i,type=False).save()
     print(Ingredient.objects.all())
