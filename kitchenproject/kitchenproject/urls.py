@@ -21,8 +21,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('',blog.views.home, name="home"),
-     path('refrigerator/',blog.views.refrigerator,name="refrigerator"),
-     path('accounts/', include('accounts.urls')),
-     path('menulist/',receipe.views.menulist,name="menulist"),
+    path('',blog.views.home, name="home"),
+    path('refrigerator/',blog.views.refrigerator,name="refrigerator"),
+    path('accounts/', include('accounts.urls')),
+    path('menulist/',receipe.views.menulist,name="menulist"),
 ]
