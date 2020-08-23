@@ -21,7 +21,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <!-- use autocomplete jQuery ui -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -79,7 +81,22 @@
         </div>
     </nav>
 
-   <h1>Hello Refrigerator</h1>
+    <h1>Hello Refrigerator</h1>
+    
+    <form>
+        <label for="product">Product</label>
+        <input type="text" name="product" id="product">
+    </form>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#product" ).autocomplete({
+            source: "{% url 'refrigerator' %}"
+          });
+        });
+    </script>
 </body>
 
 </html>

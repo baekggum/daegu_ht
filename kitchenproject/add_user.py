@@ -6,7 +6,20 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "kitchenproject.settings")
 import django
 django.setup()
 
-from blog.models import User
-User(name='test',food_seasoning=['소금','후추'],food_ingredient={'당근':'2020.8.23'}).save()
-for i in User.objects.all():
-    print(i.food_ingredient['당근'])
+from blog.models import Users
+from django.contrib.auth.models import User as Account
+
+#Users_name_list 변수를 빈 리스트로 미리 선언 
+Users_name_list = [] 
+
+#Users의 이름만 뽑아서, 리스트에 저장
+for k in Users.objects.all():
+   Users_name_list.append(k.name) 
+
+
+for x in Account.objects.all():
+   # x.username이 Users_name_list에 이미 존재하면, 다시 반복문 실행 
+   if x.username in Users_name_list:
+       continue 
+   else:
+       Users(name=x.username,food_seasoning=['소금','후추',' 설탕']).save()
