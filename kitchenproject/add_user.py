@@ -22,4 +22,8 @@ for x in Account.objects.all():
    if x.username in Users_name_list:
        continue 
    else:
+<<<<<<< HEAD
        Users(name=x.username,food_seasoning=['소금','후추']).save()
+=======
+       Users(name=x.username,food_seasoning=['소금','후추',' 설탕']).save()
+>>>>>>> 4c52e637aaa359d98f8fd2689e9aa2dec4b2334f

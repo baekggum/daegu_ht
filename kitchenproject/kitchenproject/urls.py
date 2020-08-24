@@ -22,7 +22,10 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',blog.views.home, name="home"),
+<<<<<<< HEAD
     path('apply/', blog.views.apply , name='apply'),
+=======
+>>>>>>> 4c52e637aaa359d98f8fd2689e9aa2dec4b2334f
     path('refrigerator/',blog.views.refrigerator,name="refrigerator"),
     path('accounts/', include('accounts.urls')),
     path('menulist/',receipe.views.menulist,name="menulist"),
