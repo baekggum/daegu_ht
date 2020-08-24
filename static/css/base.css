@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    margin: 0;
+}
+header{
+    height: 80px;
+    border: 1px solid black;
+}
+
+/* 상단배너 a태그 */
+.header_com a{
+    text-decoration: none;
+}
+
+/* 유저 프로파일 이미지 밖 div */
+#profile_div{
+    border-radius: 70%;
+    overflow: hidden;
+    width: 3rem;
+    height: 3rem; 
+    float: right;
+    position: absolute;
+    right: 10rem;
+    top: 1rem;
+}
+
+/* 로고 */
+#logo{
+    float: left;
+    position: absolute;
+    top: 2rem;
+    left: 10rem;
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+/* 유저 프로파일 이미지 */
+#profile{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 유저이름 */
+#username{
+    float: right;
+    position: absolute;
+    top: 2rem;
+    right: 15rem;
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+center{
+    display: flex;
+    flex-direction: row;
+    height: 50rem;
+    border: 1px solid black;
+}
+/* center부분 왼쪽 */
+#left_box{
+    flex-grow: 2;
+    height: 100%;
+    border: 1px solid black;
+}
+/* center부분 오른쪽 */
+#right_box{
+    flex-grow: 1;
+    height: 100%;
+    border: 1px solid black;
+}
+/* 냉장고부분 */
+#refrig{
+    margin-top: 6%;
+    height: 95%;
+    float: right;
+    width: 80%;
+    background-color: #E8ECF7;
+    border-top-left-radius: 5%;
+}
+footer{
+    height: 80px;
+    width: 100%;
+    border-top: 1px solid black;
+}
+/* 왼쪽 여백 */
+#left {
+    top: 0;
+    float: left;
+    height: 60rem;
+    width: 10rem;
+    background-color: rgba(255, 0, 0, 0.13);
+}
+
+/* 오른쪽 여백 */
+#right {
+    top: 0;
+    float: right;
+    height: 60rem;
+    width: 10rem;
+    background-color: rgba(255, 0, 0, 0.13);
+}
