@@ -83,10 +83,18 @@
 
     <h1>Hello Refrigerator</h1>
     
-    <form>
+    <form action = "{% url "apply" %}" method = "POST">
+    {% csrf_token %}
         <label for="product">Product</label>
         <input type="text" name="product" id="product">
+        <input type="submit">
     </form>
+
+    {% for user in users.all %}
+    <div class="container">
+        <p>{{ user.food_ingredient }}</p>
+    </div>
+    {% endfor %}
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

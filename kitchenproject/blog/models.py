@@ -3,7 +3,7 @@ from django_mysql.models import ListCharField
 from jsonfield import JSONField
 # Create your models here.
 
-class User(Model):
+class Users(Model):
     name=CharField(max_length=20)
     food_seasoning=ListCharField(
         base_field=CharField(max_length=10),
@@ -13,3 +13,6 @@ class User(Model):
 
     def __str__(self):
         return self.name
+
+    def get_object(self):
+        return self.request.user
