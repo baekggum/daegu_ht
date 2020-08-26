@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main_recipe.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+</head>
+<body>
+    <div id="left"></div>
+    <header>
+        <div class="header_com" id="logo"><a href="{% url 'recipes' %}">LOGO</a></div>
+        <div class="header_com" id="profile_div"><a href="#"><img id="profile" src="../media/ (1).gif"></a></div>
+        <div class="header_com" id="username"><a href="#">username</a></div>
+    </header>
+    <center>
+        {% block content %}
+        <div id="left_box">
+            <div id="result_message">
+                <p>검색결과가 n개 있습니다.</p>
+            </div>
+            <div id="center_recipes">
+                {% for recipe in posts %}
+                <div id="recipe">
+                    <div id="inrecipe_pic"><a href="{% url 'detail' recipe.id %}">{{recipe.id}}</a><!--{{recipe.picture}}--></div>
+                    <div id="inrecipe_name">{{recipe.title}}</div>
+                </div>
+                {% endfor %}
+            </div>
+            <br><br>
+            <div id="pagination">
+                {%if posts.has_previous%}
+                <a href="?page=1">First</a>
+                <a href="?page={{posts.previous_page_number}}">Previous</a>
+                {%endif%}
+
+                <span>{{posts.number}}</span>
+                <span>of</span>
+                <span>{{posts.paginator.num_pages}}</span>
+
+                {%if posts.has_next%}
+                <a href="?page={{posts.next_page_number}}">Next</a>
+                <a href="?page={{posts.paginator.num_pages}}">Last</a>
+                {%endif%}
+            </div>
+        </div>
+        <div id="right_box">
+            <div id="refrig">
+                <div id="btn_group"> 
+                    <button id="test_btn1">테스트1</button> 
+                    <button id="test_btn2">테스트2</button> 
+                </div><br>
+                <div id="ingres">
+                    <div id="ingre"></div>
+                    <div id="ingre"></div>
+                    <div id="ingre"></div>
+                    <div id="ingre"></div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </center>
+    <footer>
+
+    </footer>
+</body>
+</html>

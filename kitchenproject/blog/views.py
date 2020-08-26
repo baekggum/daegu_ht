@@ -2,7 +2,7 @@ from django.shortcuts import render,get_object_or_404,redirect
 from django.utils import timezone
 from django.core.paginator import Paginator
 from .models import Users
-from receipe.models import Ingredient
+from receipe.models import Ingredient,Recipe
 from django.http import JsonResponse
 
 # Create your views here.
@@ -31,3 +31,18 @@ def refrigerator(request):
              }
         
     return render(request,"refrigerator.html",context=context)
+
+def recipes(request):
+    recipes = Recipe.objects
+    recipes_list = Recipe.objects.all()
+    paginator = Paginator(recipes_list,12)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
+    return render(request, 'main_recipe.html',{"recipes":recipes,'posts':posts})
+
+def recipe_detail(request,recipe_id):
+    details = get_object_or_404(Recipe,pk=recipe_id)
+    return render(request, 'recipe_detail.html',{'details':details})
+
+def base(request):
+    return render(request, 'base.html')

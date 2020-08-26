@@ -15,14 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-import blog.views, receipe.views
+import receipe.views
 from django.conf import settings
 # 여기있는 url갖고 쓸거기 떄문에
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',blog.views.home, name="home"),
-    path('refrigerator/',blog.views.refrigerator,name="refrigerator"),
+    path('',include('blog.urls')),
     path('accounts/', include('accounts.urls')),
     path('menulist/',receipe.views.menulist,name="menulist"),
 ]
