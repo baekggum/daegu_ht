@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-v20-latin-regular.woff") format("woff");
+}
+
+#welcome {
+  /*html의 id는 css에서 hashtag로 받음*/
+  position: absolute;
+  width: 30.44rem;
+  height: 4.63rem;
+  left: 7.19rem;
+  top: 10.94rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.44rem;
+  line-height: 4rem;
+  text-align: center;
+
+  color: #000000;
+}
+
+#text {
+  position: absolute;
+  width: 16.88rem;
+  height: 1rem;
+  left: 13.94rem;
+  top: 25.44rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.94rem;
+  line-height: 1.13rem;
+  /* text-align: center; */
+  letter-spacing: 0.345em;
+  text-transform: uppercase;
+
+  color: #7d7d7d;
+}
+
+label [for="address"] {
+  position: absolute;
+  width: 11.44rem;
+  height: 1.69rem;
+  left: 7.56rem;
+  top: 28.5rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.38rem;
+  line-height: 1.63rem;
+
+  color: #000000;
+}
+
+input[type="text"] {
+  position: absolute;
+  width: 29.63rem;
+  height: 3.81rem;
+  left: 7.56rem;
+  top: 31.31rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.13rem;
+  line-height: 1.31rem;
+  letter-spacing: 0.045em;
+  color: #7d7d7d;
+
+  border: 0.03rem solid #7d7d7d;
+  box-sizing: border-box;
+}
+
+input[type="password"] {
+  position: absolute;
+  width: 29.63rem;
+  height: 3.81rem;
+  left: 7.56rem;
+  top: 38.19rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.13rem;
+  line-height: 1.31rem;
+  letter-spacing: 0.045em;
+  color: #7d7d7d;
+
+  border: 0.03rem solid #7d7d7d;
+  box-sizing: border-box;
+}
+
+.subbtn {
+  position: absolute;
+  width: 29.63rem;
+  height: 3.81rem;
+  left: 7.56rem;
+  top: 47.06rem;
+
+  background: #3974d8;
+
+  border: 0rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.38rem;
+  line-height: 1.63rem;
+
+  text-align: center;
+
+  color: #ffffff;
+}

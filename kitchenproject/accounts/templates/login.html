@@ -1,7 +1,9 @@
-<!doctype html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -33,11 +35,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="style.css">x
 
     <title>kitchen</title>
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> -->
+
 </head>
 
-<body>
+<!-- <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">우리 주방 홈페이지</a>
@@ -83,23 +90,32 @@
     {{ error }}
     <br>
     <br>
-    {% endif %}
+    {% endif %} -->
 
-    <h1>Login</h1>
+    <div id="welcome">Welcome Back</div>
 
+    <div id="text">or log in with email</div>
     <form method="POST" action="{% url 'login'%}">
 
         {% csrf_token %}
-        Username:
+        <!-- <p>Email Address</p>
+        <br> -->
+        <label for="address">Email Address</label>
         <br>
-        <input name="username" type="text" value="">
+        <input name="username" type="text" id="address" value="Email Address">
         <br>
-        Password:
+        <!-- <p>Password</p>
+        <br> -->
+        <label for="pw">Password</label>
         <br>
-        <input name="password" type="password" value="">
+        <input name="password" type="password" id="pw" value="Password">
         <br>
         <br>
-        <input class="btn btn-primary" type="submit" value="Login">
+        <input type="checkbox" id="keep">
+        <label for="keep">Keep me logged in</label>
+        <br>
+        <input class="subbtn" type="submit" value="Log In">
+
     </form>
 
 
