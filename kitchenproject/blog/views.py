@@ -5,7 +5,7 @@ from .models import Users
 from receipe.models import Ingredient
 from django.http import JsonResponse
 from django.http import HttpResponse
-
+from .forms import PostForm
 
 # Create your views here.
 def home(request):
@@ -22,6 +22,15 @@ def refrigerator(request):
             }
 
     return render(request,"refrigerator.html",context=context)
+   
 
-def refrigerator_update(request):
-    return render(request,"refrigerator_update.html")    
+def post(request):
+    if request.method=="POST":
+        form=PostForm(request.POST)
+        if form.is_valid():
+            Users=form.save(commit=False)
+            Users.generate()
+            return redirect('refrigerator.html')
+    else:
+        form=PostForm()
+        return render(request,'form.html',{'form':form})

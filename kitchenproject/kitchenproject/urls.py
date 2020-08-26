@@ -25,5 +25,5 @@ urlpatterns = [
     path('refrigerator/',blog.views.refrigerator,name="refrigerator"),
     path('accounts/', include('accounts.urls')),
     path('menulist/',receipe.views.menulist,name="menulist"),
-    path('update/',blog.views.refrigerator_update,name="refrigerator_update"),
+    path('post/',blog.views.post,name="post"),
 ]
