@@ -1,6 +1,7 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from blog.models import Users
 from django.contrib import auth
 # Create your views here.
 
@@ -14,6 +15,7 @@ def signup(request):
             except User.DoesNotExist:
                 user = User.objects.create_user(
                     request.POST['username'], password=request.POST['password1'])
+                Users.objects.create(user=user,food_seasoning=['소금','후추',' 설탕'],food_ingredient=['계란'])
                 auth.login(request, user)
                 return redirect('home')
         else:
