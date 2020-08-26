@@ -16,7 +16,7 @@ def refrigerator(request):
     current_user = request.user
     x = Users.objects.get(user=current_user)
     context={
-            "name": x.name,
+            "name": x.user,
             "food_ingredient": x.food_ingredient,
             "food_seasoning": x.food_seasoning,
             }

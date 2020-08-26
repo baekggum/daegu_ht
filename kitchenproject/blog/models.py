@@ -7,6 +7,7 @@ from django.db import models
 
 class Users(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE,null=True)
+    name=CharField(default=True,max_length=20)
     food_seasoning=ListCharField(
         default=True,
         base_field=CharField(max_length=10),
