@@ -79,11 +79,21 @@
         </div>
     </nav>
 
-<h1>Hello menulist</h1>
-<div class="container">
-    <p>My ingredient: {{ food_ingredient }}</p>
-    <p>Recommend receipe: {{ recommend }}</p>
-</div>
+    <h1>Hello menulist</h1>
+    <div class="container">
+        <h4>My ingredient: {{ user_ingredient }}</h4>
+        <br>
+        {% for x in recommend %}
+        <div class="card" style="width: 30rem;">
+            <img src="{{ x.picture }}" class="card-img-top" alt="그림출력이안됨ㅇㄴ">
+            <div class="card-body">
+                <h5 class="card-title">{{x.title}}</h5>
+                <p class="card-text">재료: {{x.food_ingredient}}<br>작성자: {{x.author}}</p>
+                <a href="{{x.link}}" class="btn btn-primary">레시피보기</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 
 </html>

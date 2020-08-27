@@ -23,10 +23,7 @@ def menulist(request):
                 break
         if flag==len(i.food_ingredient):
             recommend.append(i)
+    list(set(recommend))
     print(recommend)
-    for m in recommend:
-        context={
-        "food_ingredient":user_ingredient,
-        "recommend": recommend[m]
-        }       
-    return render(request,'menulist.html',context=context)
+    
+    return render(request,'menulist.html',{'recommend':recommend,'user_ingredient':user_ingredient})
