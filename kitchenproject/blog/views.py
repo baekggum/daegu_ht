@@ -25,7 +25,6 @@ def refrigerator(request):
     return render(request,"refrigerator.html",context=context)
 
 
-
 def refrigerator_update(request):
     current_user = request.user
     x = Users.objects.get(user=current_user)

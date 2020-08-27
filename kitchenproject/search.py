@@ -6,8 +6,14 @@ import django
 django.setup()
 
 from receipe.models import Recipe
+from blog.models import Users
+from django.contrib.auth.models import User
+from django.contrib import auth
 
-user_ingredient=['계란','올리브유','명란','아보카도','마요네즈']
+current_user = request.user
+x = Users.objects.get(user=current_user)
+user_ingredient=x.food_ingredient
+#user_ingredient=['계란','올리브유','명란','아보카도','마요네즈']
 recommend=[]
 for i in Recipe.objects.all():
     flag=0

@@ -80,21 +80,25 @@
             </div>
         </div>
     </nav>
-
     <h1>Hello Refrigerator</h1>
-    <p>Name: {{ name }}</p>
-    <p>Food_ingredient: {{ food_ingredient }}</p>
-    <p>Food_seasoning: {{ food_seasoning }}</p>
-    <form action="{% url 'refrigerator_update' %}">
-        <input class="btn btn-outline-dark" type="submit" value="수정하기">
-    </form>
+    <br><br>
+    <div class="container">
+        
+        <p>Name: {{ name }}</p>
+        <p>Food_ingredient: {{ food_ingredient }}</p>
+        <p>Food_seasoning: {{ food_seasoning }}</p>
+
+        <form action="{% url 'refrigerator_update' %}">
+            <input class="btn btn-outline-dark" type="submit" value="수정하기">
+        </form>
+    </div>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-        $( function() {
-          $( "#product" ).autocomplete({
-            source: "{% url 'refrigerator' %}"
-          });
+        $(function () {
+            $("#product").autocomplete({
+                source: "{% url 'refrigerator' %}"
+            });
         });
     </script>
 </body>
