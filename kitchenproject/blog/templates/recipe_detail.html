@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recipe_detail.css' %}">
+</head>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recipe_detail.css' %}"> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+</head>
+<body>
+    <div id="left"></div>
+    <header>
+        <div class="header_com" id="logo"><a href="{% url 'recipes' %}">LOGO</a></div>
+        <div class="header_com" id="profile_div"><a href="#"><img id="profile" src="../media/ (1).gif"></a></div>
+        <div class="header_com" id="username"><a href="#">username</a></div>
+    </header>
+    <center> -->
+        <div id="left_box">
+            <div id="picture">
+                <img src="../media/1.jpg" alt="">
+            </div><br>
+            <div id="name">{{details.title}}</div>
+            <br>
+            <div id="link">{{details.link}}</div>
+            <br>
+            <div id="ingredient">
+                {{details.food_ingredient}}
+            </div>
+        </div>
+        <div id="right_box">
+            <div id="refrig">
+                <div id="btn_group"> 
+                    <button id="test_btn1">테스트1</button> 
+                    <button id="test_btn2">테스트2</button> 
+                </div><br>
+                <div id="ingres">
+                    <div id="ingre"></div>
+                    <div id="ingre"></div>
+                    <div id="ingre"></div>
+                    <div id="ingre"></div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    <!-- </center>
+    <footer>
+
+    </footer>
+</body>
+</html> -->

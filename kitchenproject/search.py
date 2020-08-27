@@ -6,18 +6,17 @@ import django
 django.setup()
 
 from receipe.models import Recipe
-
-user_ingredient=['계란','올리브유','명란','아보카도','마요네즈']
-recommend=[]
-for i in Recipe.objects.all():
-    flag=0
-    for ingredient in i.food_ingredient:
-        if ingredient in user_ingredient:
-            flag+=1
-            pass
-        else:
-            break
-    if flag==len(i.food_ingredient):
-        recommend.append(i)
-print(recommend)
+from blog.models import User
+#user_ingredient=['계란','올리브유','명란','아보카도','마요네즈']
+def search_recipe(user,num=0):
+    user_ingredient=user.food_seasoning+list(user.food_ingredient.keys())
+    recommend=[]
+    for i in Recipe.objects.all():
+        flag=0
+        for ingredient in i.food_ingredient:
+            if ingredient in user_ingredient:
+                flag+=1
+        if flag==len(i.food_ingredient)-num:
+            recommend.append(i)
+    return recommend
         
