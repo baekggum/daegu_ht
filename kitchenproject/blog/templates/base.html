@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,28 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 </head>
+
 <body>
     <div id="left"></div>
     <header>
         <div class="header_com" id="logo"><a href="#">LOGO</a></div>
+        {% if user.is_authenticated %}
         <div class="header_com" id="profile_div"><a href="#"><img id="profile" src="../media/ (1).gif"></a></div>
-        <div class="header_com" id="username"><a href="#">username</a></div>
+        <div class="header_com" id="username"><a href="#">{{ user.username }}</a></div>
+        {% else %}
+        <li class="header_com">
+            <a class="nav-item nav-link" href="{% url 'signup' %}">Signup</a>
+        </li>
+        <li class="header_com">
+            <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        {% endif %}
     </header>
     <center>
         {% block content %}
         <div id="left_box">
-            
-            
+
+
         </div>
         <div id="right_box">
             <div id="refrig">
@@ -31,5 +42,11 @@
     <footer>
 
     </footer>
+    <script>
+        $(document).ready(function(){
+          $(".dropdown-toggle").dropdown("toggle");
+        });
+    </script>
 </body>
+
 </html>

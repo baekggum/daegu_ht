@@ -1,5 +1,12 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recipe_detail.css' %}">
+</head>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,8 +22,7 @@
         <div class="header_com" id="profile_div"><a href="#"><img id="profile" src="../media/ (1).gif"></a></div>
         <div class="header_com" id="username"><a href="#">username</a></div>
     </header>
-    <center>
-        <!-- {% block content %} -->
+    <center> -->
         <div id="left_box">
             <div id="picture">
                 <img src="../media/1.jpg" alt="">
@@ -43,10 +49,10 @@
                 </div>
             </div>
         </div>
-        <!-- {% endblock %} -->
-    </center>
+        {% endblock %}
+    <!-- </center>
     <footer>
 
     </footer>
 </body>
-</html>
+</html> -->

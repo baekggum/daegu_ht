@@ -17,7 +17,7 @@ class Recipe(Model):
         return self.title
 
     def summary(self):
-        return self.picture[:20]
+        return self.title[:20]
 
 class Ingredient(Model):
     name=CharField(max_length=20)

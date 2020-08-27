@@ -11,7 +11,7 @@ body{
 header{
     min-width: 80rem;
     height: 80px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 /* 상단배너 a태그 */
@@ -60,18 +60,19 @@ center{
     display: flex;
     flex-direction: row;
     height: 50rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 /* center부분 왼쪽 */
 #left_box{
     /* flex-grow: 2;
     height: 100%;
     border: 1px solid black; */
+    margin-top: 3rem;
     flex-direction: column;
-    flex-basis: 20rem;
+    flex-basis: 10rem;
     flex-grow: 2;
+    min-width: 20rem;
     height: 100%;
-    border: 1px solid black;
 }
 /* center부분 오른쪽 */
 #right_box{
@@ -79,14 +80,14 @@ center{
     height: 100%;
     border: 1px solid black; */
     flex-basis: 20rem;
-    flex-grow: 2;
+    flex-grow: 1;
     height: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 /* 냉장고부분 */
 #refrig{
-    margin-top: 6%;
-    height: 106%;
+    margin-top: 10%;
+    height: 100%;
     float: right;
     width: 80%;
     background-color: #E8ECF7;
@@ -95,7 +96,7 @@ center{
 footer{
     height: 80px;
     width: 100%;
-    border-top: 1px solid black;
+    /* border-top: 1px solid black; */
 }
 /* 왼쪽 여백 */
 #left {
@@ -103,7 +104,7 @@ footer{
     float: left;
     height: 60rem;
     width: 10rem;
-    background-color: rgba(255, 0, 0, 0.13);
+    /* background-color: rgba(255, 0, 0, 0.13); */
 }
 
 /* 오른쪽 여백 */
@@ -112,5 +113,5 @@ footer{
     float: right;
     height: 60rem;
     width: 10rem;
-    background-color: rgba(255, 0, 0, 0.13);
+    /* background-color: rgba(255, 0, 0, 0.13); */
 }
