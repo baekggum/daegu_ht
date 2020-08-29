@@ -27,12 +27,14 @@
 <body>
     <div id="left_box">
         <div id="result_message">
+            <!-- {% if num %} -->
             <p>검색결과가 n개 있습니다.</p>
+            <!-- {% endif %} -->
         </div>
         <div id="center_recipes">
             {% for recipe in posts %}
             <div id="recipe">
-                <div id="inrecipe_pic"><a href="{% url 'detail' recipe.id %}">{{recipe.id}}</a>
+                <div id="inrecipe_pic"><a href="{% url 'detail' recipe.id %}"><img src= {{ recipe.picture[2:len(picture)-2] }}/></a>
                     <!--{{recipe.picture}}-->
                 </div>
                 <div id="inrecipe_name">{{recipe.title}}</div>

@@ -15,7 +15,7 @@ import django
 django.setup()
 
 from receipe.models import Recipe, Ingredient
-from blog.models import User
+from blog.models import Users
 #web_url="http://www.10000recipe.com/recipe/6912736"
 def crawling(web_url):
     html = urlopen(web_url)  
@@ -36,12 +36,13 @@ def crawling(web_url):
         ingredient=food_ingredient[i]
         food_ingredient[i]=re.findall('[가-힣\s]+',ingredient)[0].rstrip()
     picture=dic['image'][0]
+    # picture=picture[2:len(picture)-2]
     link=web_url
     return {'title':title, 'author':author, 'food_ingredient':food_ingredient, 'picture':picture, 'link':link}
 
 if __name__=='__main__':
     Ingredient.objects.all().delete()
-    User.objects.all().delete()
+    Users.objects.all().delete()
     for i in range(6912546,6912646):
         web_url="http://www.10000recipe.com/recipe/"+str(i)
         try:
@@ -136,7 +137,7 @@ if __name__=='__main__':
                 L=j.split('적당량')
                 j=L[0].strip()
             new_ingredient.append(j)
-            Ingredient(name=j,type=False).save()
+            Ingredient(name=j).save()
         print(blog_data_dict['food_ingredient'])
         print(new_ingredient)
         Recipe(title=blog_data_dict['title'],author=blog_data_dict['author'],food_ingredient=new_ingredient,
