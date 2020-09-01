@@ -1,4 +1,3 @@
-
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from blog.models import Users
@@ -15,7 +14,7 @@ def signup(request):
             except User.DoesNotExist:
                 user = User.objects.create_user(
                     request.POST['username'], password=request.POST['password1'])
-                Users.objects.create(user=user,name=user,food_seasoning=['소금','후추',' 설탕'],food_ingredient=['계란'])
+                Users.objects.create(user=user,name=user,food_seasoning=['소금','후추',' 설탕'],food_ingredient={"계란":'2020.8.30'})
                 auth.login(request, user)
                 return redirect('home')
         else:
