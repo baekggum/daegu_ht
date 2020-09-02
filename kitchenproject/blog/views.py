@@ -6,7 +6,6 @@ from receipe.models import Ingredient
 from django.http import JsonResponse
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from .form import UsersForm
 from collections import OrderedDict 
 from datetime import datetime,timedelta
 # Create your views here.
@@ -27,21 +26,18 @@ def refrigerator(request):
 
     return render(request,"refrigerator.html",context=context)
 
+def seasoning_update(request):
+    current_user=request.user
+    x=Users.objects.get(user=current_user)
+    if request.method=="GET": 
+        seasoning_name=request.GET('seasoning_name')
+        # x.food_seasoning[request.POST['seasoning_name']]
+        x.food_seasoning.append('seasoning_name')
+        x.save()
+        return redirect('refrigerator')
+    else:
+        return render(request,'refrigerator.html')          
 
-def refrigerator_update(request):
-    current_user = request.user
-    x = Users.objects.get(user=current_user)
-    if request.method=="POST": #수정정보 입력을 하고나면 저장된다->냉장고화면으로 전환.
-        form=UsersForm(request.POST)
-        if form.is_valid():
-            print(form.cleaned_data)
-            x.food_ingredient=form.cleaned_data['food_ingredient']
-            x.food_seasoning=form.cleaned_data['food_seasoning']
-            x.save()
-            return redirect('refrigerator')
-    else: #딱 처음 입력받을때 기존정보 보여주며 틀이 화면에 뜬다
-        form=UsersForm(instance=x)
-        return render(request,'refrigerator_update.html',{'form':form})
 def update(request):
     current_user=request.user
     buy_date=datetime.today().strftime("%Y-%m-%d")
@@ -113,4 +109,5 @@ def edit(request, ingredient):
         return render(request, 'edit_ingredient.html',{'ingredient':ingredient, 'valid_date':valid_date})
 
 def getDateFromTuple(tuple):
-    return datetime.strptime(tuple, "%Y-%m-%d")            
+    return datetime.strptime(tuple, "%Y-%m-%d")      
+

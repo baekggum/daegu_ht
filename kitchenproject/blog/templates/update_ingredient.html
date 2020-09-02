@@ -85,26 +85,38 @@
     <div class="container">
         <script language="JavaScript"></script>
         {% for L in all_ingredient %}
-            {% for ingredient,valid_date in L %}
-            {{ingredient}} : {{valid_date}} 
-            <div class="edit">
-                <p><a href="{% url 'edit' ingredient %}">수정</a></p>  
+        {% for ingredient,valid_date in L %}
+        <div style="display: inline-block">
+            <div class="card" style="width: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title"> {{ingredient}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{valid_date}}</h6>
+                    <a href="{% url 'edit' ingredient %}" class="card-link">수정</a>
+                    <a href="{% url 'delete' ingredient %}" class="card-link">삭제</a>
+                </div>
             </div>
-            <div class="delete">
-                <p><a href="{% url 'delete' ingredient %}">삭제</a></p>  
-            </div>
-            {% endfor %}
-            <br>--------------------------------------------<br>
+        </div>
         {% endfor %}
+        <br>--------------------------------------------<br>
+        {% endfor %}
+        <h3>Add Ingredient</h3>
         <form action="{% url 'update_ingredient' %}" method="POST">
             {% csrf_token %}
             <br>
             <label for="ingredient">Ingredient: </label>
             <input id='ingredient_name' type="text" name="ingredient_name">
             <input id='date' type="date" value={{buy_date}} name="date">
-            <br>
             <input type="submit" class="btn btn-primary" value="추가">
         </form>
+        <h3>Add Seasoning</h3>
+        <form action="{% url 'seasoning_update' %}" method="POST">
+            {% csrf_token %}
+            <br>
+            <label for="seasoning">Seasoning: </label>
+            <input id='seasoning_name' type="text" name="seasoning_name">
+            <input type="submit" class="btn btn-primary" value="추가">
+        </form>
+        <br><br><br><br><br><br>
     </div>
 </body>
 
