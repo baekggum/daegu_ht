@@ -93,8 +93,11 @@
     {% endif %} -->
 
     <div id="welcome">Welcome Back</div>
-
+    <div id="likelion"></div>
+    <img href="../blog/static/images/letter.png" id="BI_2">
+    <div id="line1"></div>
     <div id="text">or log in with email</div>
+    <div id="line2"></div>
     <form method="POST" action="{% url 'login'%}">
 
         {% csrf_token %}
@@ -118,7 +121,9 @@
 
     </form>
 
-
+    <div id="question_signup">Don't have an account?</div>
+    <div id="signup" href=#>Sign up</div>
+    <div class="rectangle"></div>
 </body>
 
 </html>

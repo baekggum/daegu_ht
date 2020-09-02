@@ -21,6 +21,47 @@
   color: #000000;
 }
 
+#line1 {
+  position: absolute;
+  width: 6.13rem;
+  height: 0rem;
+  left: 7.56rem;
+  top: 26rem;
+
+  border: 0.03rem solid #7d7d7d;
+}
+
+#line2 {
+  position: absolute;
+  width: 6.13rem;
+  height: 0rem;
+  left: 31.06rem;
+  top: 26rem;
+
+  border: 0.03rem solid #7d7d7d;
+}
+
+#likelion {
+  position: absolute;
+  width: 29.63rem;
+  height: 3.81rem;
+  left: 7.56rem;
+  top: 18.69rem;
+
+  background: #ffffff;
+  border: 0.03rem solid #d6d6d6;
+  box-sizing: border-box;
+  box-shadow: 0.13rem 0.13rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+#BI_2 {
+  position: absolute;
+  width: 6.63rem;
+  height: 1rem;
+  left: 24.94rem;
+  top: 20rem;
+}
+
 #text {
   position: absolute;
   width: 16.88rem;
@@ -94,7 +135,24 @@ input[type="password"] {
   box-sizing: border-box;
 }
 
+label [for="keep"] {
+  position: absolute;
+  width: 9.38rem;
+  height: 0.94rem;
+  left: 9.25rem;
+  top: 43.63rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.13rem;
+  line-height: 1.31;
+
+  color: rgba(0, 0, 0, 0.9);
+}
+
 .subbtn {
+  /*html의 class는 css에서 .으로 받아옴*/
   position: absolute;
   width: 29.63rem;
   height: 3.81rem;
@@ -114,4 +172,50 @@ input[type="password"] {
   text-align: center;
 
   color: #ffffff;
+}
+
+#question_signup {
+  position: absolute;
+  width: 14.19rem;
+  height: 1.56rem;
+  left: 12.31rem;
+  top: 54.88rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.13rem;
+  line-height: 1.31rem;
+  text-align: center;
+  letter-spacing: 0.045em;
+
+  color: #646464;
+}
+
+#signup {
+  position: absolute;
+  width: 5rem;
+  height: 1rem;
+  left: 26.5rem;
+  top: 54.88rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.13rem;
+  line-height: 1.31rem;
+  text-align: center;
+  letter-spacing: 0.045em;
+
+  color: #612b7a;
+}
+
+.rectangle {
+  position: absolute;
+  width: 720px;
+  height: 1024px;
+  left: 720px;
+  top: 0px;
+
+  background: #e8ecf7;
 }
