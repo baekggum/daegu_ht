@@ -84,6 +84,7 @@
         <h2>Only in your Refrigerator</h2>
         <h4>My ingredient: {{ user_ingredient }}</h4>
         <br><br>
+        {% if recommend %}
         {% for x in recommend %}
         <div style="display: inline-block">
             <div class="card" style="width:300px; height:auto;margin:20px;">
@@ -96,13 +97,14 @@
             </div>
         </div>
         {% endfor %}
+        {% endif %} 
     </div>
 
     <br><br><br><br><br><br>
     <div class="container">
         <h2>Plus 1 + in your Refrigerator</h2>
 
-        {% for n in recommend %}
+        {% for n in recommendOne %}
         <div style="display: inline-block">
             <div class="card" style="width: 300px; height:auto;margin:20px;">
                 <img src={{n.picture}} class="card-img-top" />

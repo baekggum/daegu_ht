@@ -20,12 +20,11 @@ def menulist(request,num=0):
         for ingredient in i.food_ingredient:
             if ingredient in user_ingredient:
                 flag+=1
-            if flag==len(i.food_ingredient)-num:
-                recommend.append(i)
-            if flag==len(i.food_ingredient)-num-1:
-                recommendOne.append(i)
-            if flag==len(i.food_ingredient)-num-2:
-                recommendTwo.append(i)        
+        if flag==len(i.food_ingredient)-num:
+            recommend.append(i)
+        if flag==len(i.food_ingredient)-num-1:
+            recommendOne.append(i)
+        if flag==len(i.food_ingredient)-num-2:
+            recommendTwo.append(i)        
     
-
     return render(request,'menulist.html',{'recommend':recommend,'recommendOne':recommendOne,'recommendTwo':recommendTwo,'user_ingredient':user_ingredient})

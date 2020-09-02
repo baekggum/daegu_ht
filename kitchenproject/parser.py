@@ -160,9 +160,10 @@ if __name__=='__main__':
             elif '물' in j:
                 continue
             elif '찬물' in j:
-                continue     
-            elif '' in j:
-                continue           
+                continue               
+            elif '' == j:
+                continue
+                       
             new_ingredient.append(j)
             all_ingredient.append(j)
         new_ingredient=list(set(new_ingredient))  
