@@ -54,6 +54,23 @@
   box-shadow: 0.13rem 0.13rem 0.25rem rgba(0, 0, 0, 0.25);
 }
 
+p {
+  position: absolute;
+  width: 10rem;
+  height: 1.94rem;
+  left: 15.75rem;
+  top: 19.63rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  text-align: center;
+
+  color: #000000;
+}
+
 #BI_2 {
   position: absolute;
   width: 6.63rem;
