@@ -42,8 +42,7 @@
 }
 
 #likelion {
-  position: relative;
-  z-index: -1;
+  position: absolute;
   width: 29.63rem;
   height: 3.81rem;
   left: 7.56rem;
@@ -55,7 +54,7 @@
   box-shadow: 0.13rem 0.13rem 0.25rem rgba(0, 0, 0, 0.25);
 }
 
-p {
+#with {
   position: absolute;
   width: 10rem;
   height: 1.94rem;
@@ -111,7 +110,7 @@ p {
   color: #7d7d7d;
 }
 
-#email {
+#address {
   position: absolute;
   width: 11.44rem;
   height: 1.69rem;
@@ -144,6 +143,22 @@ input[type="text"] {
 
   border: 0.03rem solid #7d7d7d;
   box-sizing: border-box;
+}
+
+label [for="pw"] {
+  position: absolute;
+  width: 11.44rem;
+  height: 1.69rem;
+  left: 7.56rem;
+  top: 36rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.38rem;
+  line-height: 1.63rem;
+
+  color: #000000;
 }
 
 input[type="password"] {
