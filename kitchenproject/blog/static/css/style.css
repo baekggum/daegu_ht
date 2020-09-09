@@ -42,7 +42,8 @@
 }
 
 #likelion {
-  position: absolute;
+  position: relative;
+  z-index: -1;
   width: 29.63rem;
   height: 3.81rem;
   left: 7.56rem;
@@ -71,8 +72,20 @@ p {
   color: #000000;
 }
 
+#Bi_1 {
+  position: relative;
+  z-index: 101;
+  width: 2.94rem;
+  height: 1.44rem;
+  left: 12.81rem;
+  top: 19.88rem;
+
+  background: url("../images/BI_1.png");
+}
+
 #BI_2 {
-  position: absolute;
+  position: relative;
+  z-index: 1;
   width: 6.63rem;
   height: 1rem;
   left: 24.94rem;
@@ -98,7 +111,7 @@ p {
   color: #7d7d7d;
 }
 
-label [for="address"] {
+#email {
   position: absolute;
   width: 11.44rem;
   height: 1.69rem;
@@ -189,6 +202,16 @@ label [for="keep"] {
   text-align: center;
 
   color: #ffffff;
+}
+
+#line3 {
+  position: absolute;
+  width: 29.64rem;
+  height: 0rem;
+  left: 7.56rem;
+  top: 53.75rem;
+
+  border: 0.03rem solid #7d7d7d;
 }
 
 #question_signup {

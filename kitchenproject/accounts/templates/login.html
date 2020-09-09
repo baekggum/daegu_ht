@@ -36,7 +36,7 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     
-    <link rel="stylesheet" href="style.css">x
+    <link rel="stylesheet" href="style.css">
 
     <title>kitchen</title>
 
@@ -94,8 +94,10 @@
 
     <div id="welcome">Welcome Back</div>
     <div id="likelion"></div>
+    <!-- <img href="../../blog/static/images/BI_1.png" id="BI_1"> -->
+    <div id="BI_1"></div>
     <p>Log in with</p>
-    <img href="../blog/static/images/letter.png" id="BI_2">
+    <img href="../../blog/static/images/letter.png" id="BI_2">
     <div id="line1"></div>
     <div id="text">or log in with email</div>
     <div id="line2"></div>
@@ -104,15 +106,17 @@
         {% csrf_token %}
         <!-- <p>Email Address</p>
         <br> -->
-        <label for="address">Email Address</label>
-        <br>
+        <!-- <label for="address">Email Address</label> -->
+        <div id="email">Email Address</div>
+        
         <input name="username" type="text" id="address" value="Email Address">
         <br>
         <!-- <p>Password</p>
         <br> -->
-        <label for="pw">Password</label>
+        <!-- <label for="pw">Password</label> -->
+        <div id="pw">Password</div>
         <br>
-        <input name="password" type="password" id="pw" value="Password">
+        <input name="password" type="password" id="pswd" value="Password">
         <br>
         <br>
         <input type="checkbox" id="keep">
@@ -122,6 +126,7 @@
 
     </form>
 
+    <div id="line3"></div>
     <div id="question_signup">Don't have an account?</div>
     <div id="signup" href=#>Sign up</div>
     <div class="rectangle"></div>
