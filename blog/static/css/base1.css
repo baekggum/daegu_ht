@@ -1,0 +1,503 @@
+.nanumsquare {
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    height: 6rem;
+    float: left;
+    padding-left: 10rem;
+    padding: 0 10rem 0 10rem;
+    z-index: 9999;
+}
+
+/* 상단배너 a태그 */
+
+.header_com a {
+    text-decoration: none;
+}
+
+/* 유저 프로파일 이미지 밖 div */
+
+#profile_div {
+    border-radius: 70%;
+    overflow: hidden;
+    width: 3rem;
+    height: 3rem;
+    float: right;
+    position: absolute;
+    right: 2rem;
+    top: 30%;
+}
+
+/* 로고 */
+
+#logo {
+    float: left;
+    position: absolute;
+    top: 38%;
+    left: 5rem;
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+/* 유저 프로파일 이미지 */
+
+#profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 유저이름 */
+
+#username {
+    float: right;
+    position: absolute;
+    top: 38%;
+    /* right: 7rem; */
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+#username_a:visited, #logo_a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+/* 왼쪽 여백 */
+
+#left {
+    top: 0;
+    float: left;
+    height: 45rem;
+    width: 5rem;
+    /* background-color: red; */
+}
+
+/* 오른쪽 여백 */
+
+#right {
+    top: 0;
+    float: right;
+    height: 45rem;
+    width: 5rem;
+    /* background-color: red; */
+}
+
+.main {
+    padding-left: 10rem;
+}
+
+#refri {
+    position: absolute;
+    right: 0;
+    top: 6rem;
+    height: 100%;
+    width: 25rem;
+    background: #E8ECF7;
+    border-radius: 40px 0 0 0;
+}
+
+#button_back {
+    position: absolute;
+    width: 6.4rem;
+    height: 1.5rem;
+    left: 2rem;
+    top: 1.5rem;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 19px;
+}
+
+#button {
+    position: absolute;
+    width: 3.7rem;
+    height: 1.8rem;
+    left: 0;
+    top: -2px;
+    background: #3974D8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 26px;
+}
+
+/* 토글버튼 시작  */
+
+* {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    font-family: 'NanumSquare', sans-serif !important;
+    margin: 0;
+}
+
+.button-cover {
+    width: 5rem;
+    height: 5rem;
+    right: 10rem;
+}
+
+.button-cover, .knobs, .layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button {
+    position: relative;
+    top: 50%;
+    left: 30%;
+    width: 74px;
+    height: 36px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.button.r, .button.r .layer {
+    border-radius: 100px;
+}
+
+/* .button.b2 {
+    border-radius: 2px;
+} */
+
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs {
+    z-index: 2;
+}
+
+.layer {
+    width: 100%;
+    /* background-color: #ebf7fc; */
+    background-color: #ffffff;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+#button-3 .knobs:before {
+    content: 'All';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 10px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #3974d8;
+    border-radius: 50%;
+    transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+}
+
+#button-3 .checkbox:active+.knobs:before {
+    width: 46px;
+    border-radius: 100px;
+}
+
+#button-3 .checkbox:checked:active+.knobs:before {
+    margin-left: -26px;
+}
+
+#button-3 .checkbox:checked+.knobs:before {
+    content: 'My';
+    left: 42px;
+    background-color: #3974d8;
+}
+
+#button-3 .checkbox:checked~.layer {
+    background-color: #ffffff;
+}
+
+/* 토글버튼 끝 */
+
+/* 검색창 시작 */
+
+.search_bar{
+    height: 2.3rem;
+    width: 22rem;
+    /* border: 1px solid #3974d8; */
+    position: absolute;
+    top: 4.3rem;
+    left: 1.8rem;
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+input{
+    width: 82%;
+    font-size: 13px;
+    padding: 10px;
+    border: 0px;
+    outline: none;
+    float: left;
+    background: #ffffff;
+    border-radius: 3px;
+}
+
+/* 크롬 */
+input:-ms-input-placeholder{
+    color:#a8a8a8;
+}
+
+/* 익스플로러 */
+input::-webkit-input-placeholder{
+    color:#a8a8a8;
+}
+
+/* 파이어폭스 */
+input::-moz-placeholder{
+    color: #a8a8a8;
+}
+
+#search_button{
+    width: 3.5rem;
+    height: 100%;
+    border: 0px solid #3974d8;
+    background: #ffffff;
+    outline: none;
+    float: right;
+    color:black;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 13px;
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+#search_button:hover {
+    background: #3974d8;
+    color: #ffffff;
+    transition: all linear 0.3s;
+}
+
+
+/* 검색창 끝 */
+
+/* All 시작 */
+
+.all_menu1 {
+    position: absolute;
+    top: 10rem;
+    left: 1.8rem;
+    width: 22rem;
+    height: 80%;
+    /* background-color: black; */
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.all_menu1::-webkit-scrollbar {
+    width: 6px;
+    background-color: #ffffff;
+}
+
+.all_menu1::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.all_menu1::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgb(143, 143, 143);
+    cursor: pointer;
+}
+
+.all_menu1::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+}
+
+.menus1 {
+    position: relative;
+    /* top:0;
+    left:0; */
+    width: 98%;
+    height: 4rem;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 5px 0 5px 0;
+}
+
+.all_box{
+    font-family: 'NanumSquare', sans-serif !important;
+    font-size: 13px;
+}
+
+#ingredient_name_all{
+    font-weight: bold;
+    position: absolute;
+    top:1.5rem;
+    left:2rem;
+}
+
+#add{
+    position: absolute;
+    top:1.5rem;
+    left: 18.5rem;
+    text-decoration: none;
+}
+
+#add:visited{
+    text-decoration: none;
+    color: black;
+}
+
+/* All 끝 */
+
+/* My 시작 */
+
+.all_menu2 {
+    position: absolute;
+    top: 4.5rem;
+    left: 1.8rem;
+    width: 21.5rem;
+    height: 30rem;
+    /* background-color: black; */
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.menus2 {
+    width: 6.5rem;
+    height: 6rem;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    display: inline-block;
+    /* margin: 0 0.3rem; */
+}
+
+#menu4{
+    position: relative;
+}
+
+#all_checked {
+    font-family: 'NanumSquare', sans-serif !important;
+    font-size: 13px;
+    text-decoration: none;
+    /* cursor: pointer; */
+    position: absolute;
+    top: 2rem;
+    left: 16rem;
+}
+
+#all_checked:visited, #delete:visited{
+    text-decoration: none;
+    color: black;
+}
+
+#delete {
+    font-family: 'NanumSquare', sans-serif !important;
+    font-size: 13px;
+    text-decoration: none;
+    /* cursor: pointer; */
+    position: absolute;
+    top: 2rem;
+    left: 20rem;
+}
+
+#recipe_search {
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-family: 'NanumSquare', sans-serif !important;
+    font-size: 13px;
+    height: 3rem;
+    width: 22rem;
+    top: 90%;
+    left: 1.8rem;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+#recipe_search:hover {
+    background: #3974D8;
+    color: white;
+    transition: all 0.3s;
+}
+
+.all_menu2::-webkit-scrollbar {
+    width: 6px;
+    background-color: #ffffff;
+}
+
+.all_menu2::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.all_menu2::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgb(143, 143, 143);
+    cursor: pointer;
+}
+
+.all_menu2::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+}
+
+.my_box{
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+#ingredient_name_my{
+    position: absolute;
+    left:2rem;
+    text-align: center;
+    top:2rem;
+    font-size:14px;
+    font-weight: bold;
+}
+
+#date{
+    position: absolute;
+    left:1rem;
+    top:4rem;
+    font-size:12px;
+}
+
+/* My 끝 */
+
+/* recipe_body 시작 */
+#recipe_body{
+    /* background-color: blue; */
+    margin-left: 10%;
+    border: 1px solid black;
+    position: absolute;
+    top: 6rem;
+    left: 6rem;
+    width: 50%; 
+    height: 100%;
+}
+
+
+/* recipe_body 끝 */

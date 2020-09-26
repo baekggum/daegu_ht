@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recipe_detail.css' %}">
+</head>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recipe_detail.css' %}"> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+</head>
+<body>
+    <div id="left"></div>
+    <header>
+        <div class="header_com" id="logo"><a href="{% url 'recipes' %}">LOGO</a></div>
+        <div class="header_com" id="profile_div"><a href="#"><img id="profile" src="../media/ (1).gif"></a></div>
+        <div class="header_com" id="username"><a href="#">username</a></div>
+    </header>
+    <center> -->
+        <div id="recipe_body">
+            <div id="picture">
+                <img src="{{details.picture}}" style="width: 100%; height: 100%" />
+            </div><br>
+            <div id="name">{{details.title}}</div>
+            <br>
+            <div id="link">{{details.link}}</div>
+            <br>
+            <div id="ingredient">
+                {{details.food_ingredient}}
+            </div>
+        </div>
+        <div id="refri">
+            <!-- 버튼 시작  -->
+            <div class="button-cover">
+              <div class="button r" id="button-3">
+                <input type="checkbox" class="checkbox" id="check"
+                  onclick="layer_toggle(document.getElementById('all')); layer_toggle(document.getElementById('my'))">
+                <div class="knobs"></div>
+                <div class="layer"></div>
+              </div>
+            </div>
+            <!-- 버튼 끝 -->
+            <div class="all" id="all" style="display: block;">
+              <!-- 검색창 시작 -->
+              <div class="search_bar">
+                <input type="search" id="search" placeholder="검색어를 입력하세요"></input>
+                <button id="search_button" type="submit"><span>추가</span>
+                  <div class="transition"></div>
+                </button>
+              </div>
+              <!-- 검색창 끝 -->
+              <div class="all_menu1">
+                <div class="menus1" id="menu1">
+                  <p class="all_box" id="ingredient_name_all">재료명</p>
+                  <a href="#" class="all_box" id="add">
+                    <p> 추가</p>
+                  </a>
+                </div>
+                <!-- <div class="menus1" id="menu2"></div>
+                    <div class="menus1" id="menu3"></div> -->
+              </div>
+            </div>
+            <div class="my" id="my" style="display: none;">
+              <a href="#" id="all_checked">
+                <p>전체선택</p>
+              </a>
+              <a href="#" id="delete">
+                <p>선택삭제</p>
+              </a>
+              <div class="all_menu2">
+                <div class="menus2" id="menu4">
+                  <p class="my_box" id="ingredient_name_my">재료명</p>
+                  <p class="my_box" id="date">20.08.24 까지</p>
+                </div>
+                <!-- <div class="menus2" id="menu5"></div>
+                    <div class="menus2" id="menu6"></div> -->
+              </div>
+              <button id="recipe_search" type="submit">레시피 검색</button>
+            </div>
+            <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+        </body>
+        {% endblock %}
+    <!-- </center>
+    <footer>
+
+    </footer>
+</body>
+</html> -->

@@ -1,0 +1,236 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-v20-latin-regular.woff") format("woff");
+}
+
+body{
+  margin:0;
+  padding:0;
+  min-width: 1600px;
+  min-height: 800px;
+}
+
+#page_all{
+  width: 100%;
+  height: 60rem;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+#logo{
+  margin-top: 5%;
+}
+
+#sect{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+
+#welcome {
+  /*html의 id는 css에서 hashtag로 받음*/
+  position: relative;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.44rem;
+  line-height: 4rem;
+  text-align: center;
+
+  color: #000000;
+}
+
+
+
+#likelion {
+  position: relative;
+  margin-top: 5%;
+  width: 60%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #ffffff;
+  border: 0.03rem solid #d6d6d6;
+  box-sizing: border-box;
+  box-shadow: 0.13rem 0.13rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+#with {
+  position: relative;
+
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  text-align: center;
+
+  color: #000000;
+}
+
+#Bi_1 {
+  position: relative;
+  z-index: 101;
+
+
+  background: url("../images/BI_1.png");
+}
+
+#BI_2 {
+  position: relative;
+  z-index: 1;
+
+}
+
+.email-line{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-top: 5%;
+}
+
+#line1,#line2 {
+  position: relative;
+  width: 17.5%;
+  height: 0%;
+
+  border-bottom: 0.03rem solid #7d7d7d;
+  border-top: 0.03rem solid #7d7d7d;
+}
+
+#text {
+  position: relative;
+  width: 40%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.94rem;
+  line-height: 1.13rem;
+  /* text-align: center; */
+  letter-spacing: 0.345em;
+  text-transform: uppercase;
+
+  color: #7d7d7d;
+}
+
+#address,#password {
+  position: relative;
+  width: 100%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.38rem;
+  line-height: 1.63rem;
+  text-align: start;
+  color: #000000;
+}
+
+input[type="text"],input[type="password"] {
+  position: relative;
+  width: 36rem;
+  height: 4rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.13rem;
+  line-height: 1.31rem;
+  letter-spacing: 0.045em;
+  color: #7d7d7d;
+
+  border: 0.03rem solid #7d7d7d;
+  box-sizing: border-box;
+}
+
+#keepbox{
+  text-align: start;
+}
+
+label [type="checkbox"] {
+  position: relative;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.13rem;
+  line-height: 1.31;
+
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.subbtn {
+  /*html의 class는 css에서 .으로 받아옴*/
+  position: relative;
+  width: 100%;
+  height: 4rem;
+
+  background: #3974d8;
+
+  border: 0rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.38rem;
+  line-height: 1.63rem;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+#line3 {
+  position: relative;
+  width: 61%;
+  height: 0%;
+  border: 0.03rem solid #7d7d7d;
+}
+
+#question_signup {
+  position: relative;
+
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.13rem;
+  line-height: 1.31rem;
+  text-align: center;
+  letter-spacing: 0.045em;
+
+  color: #646464;
+}
+
+#signup {
+  position: relative;
+
+  text-decoration: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.13rem;
+  line-height: 1.31rem;
+  text-align: center;
+  letter-spacing: 0.045em;
+
+  color: #612b7a;
+}
+
+#side {
+  position: relative;
+  width: 50%;
+  height: 60rem;
+  background: #e8ecf7;
+}

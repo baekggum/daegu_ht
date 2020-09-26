@@ -1,0 +1,50 @@
+#recipe_body #picture{
+    min-width: 40rem;
+    margin-top: 4rem;
+    width: 40rem;
+    height: auto;
+    /* border: 1px solid black; */
+}
+#recipe_body #picture img{
+    min-width: 80%;
+    max-width: 100%;
+    height: auto;
+}
+#recipe_body #name{
+    width: 40rem;
+    height: 2rem;
+    border: 1px solid black;
+}
+#recipe_body #link{
+    width: 60%;
+    height: 2rem;
+    border: 1px solid black;
+}
+#recipe_body #ingredient{
+    width: 40rem;
+    height: auto;
+    border: 1px solid black;
+}
+
+footer{
+    height: 80px;
+    width: 100%;
+    /* border-top: 1px solid black; */
+}
+/* 왼쪽 여백 */
+#left {
+    top: 0;
+    float: left;
+    height: 60rem;
+    width: 10rem;
+    /* background-color: rgba(255, 0, 0, 0.13); */
+}
+
+/* 오른쪽 여백 */
+#right {
+    top: 0;
+    float: right;
+    height: 60rem;
+    width: 10rem;
+    background-color: rgba(255, 0, 0, 0.13);
+}

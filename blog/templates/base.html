@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base1.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <title>base</title>
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="header_com" id="logo"><a href="{% url 'allrecipes' %}" id="logo_a">MYFREE</a></div>
+        <div class="header_com" id="profile_div" style="right: 2rem;"><a href="#"><img id="profile"
+                    src="ecbdb551f2b5be72c5a087147254bc71 (1).gif"></a></div>
+        <div class="header_com" id="username" style="right: 7rem;"><a href="{% url 'refrigerator' %}" id="username_a">{{user.username}}</a></div>
+    </header>
+    <!-- 왼쪽 여백 -->
+    <div id="left"></div>
+    {% block content %}
+    
+    {% endblock %}
+</body>
+
+</html>

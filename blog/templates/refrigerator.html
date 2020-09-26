@@ -1,0 +1,357 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/refrigerator.css' %}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <!-- use autocomplete jQuery ui -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <title>kitchen</title>
+    <style>
+        @font-face {
+            font-family: "Roboto";
+            src: url("../fonts/roboto-v20-latin-regular.woff") format("woff");
+        }
+
+        .nanumsquare {
+            font-family: 'NanumSquare', sans-serif !important;
+        }
+
+        #hello{
+            position: absolute;
+            width: 30.44rem;
+            height: 4.63rem;
+            left: -9rem;
+            top: -4rem;
+            font-family: 'NanumSquare', sans-serif !important;
+            font-size: 30px;
+            line-height: 4rem;
+            text-align: center;
+        }
+
+        #seasoningtitle{
+            position: absolute;
+            width: 30.44rem;
+            height: 4.63rem;
+            left: -10rem;
+            top: -4rem;
+            font-family: 'NanumSquare', sans-serif !important;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 4rem;
+            text-align: center;
+        }
+
+        .buttonspace {
+            position: absolute;
+            width: 4rem;
+            height: 2rem;
+            left: 13rem;
+            top: 3rem;
+        }
+
+        .buttonspace1 {
+            position: absolute;
+            width: 4rem;
+            height: 1rem;
+            top: 3rem;
+            left: 15rem;
+
+        }
+
+        .name {
+            position: absolute;
+            font-family: 'NanumSquare', sans-serif !important;
+            font-weight: bold;
+            font-size: 1rem;
+            line-height: 1.63rem;
+            color: #000000;
+        }
+
+        .calender {
+            position: absolute;
+            left: 10rem;
+            width: 5rem;
+            height: 4rem;
+            top: 2.5rem;
+        }
+
+        input[type="date"]{
+            position: absolute;
+            left: 16rem;
+            top: 1rem;
+            border: 1px solid #000000;
+        }
+
+        input[type="text"] {
+            position: absolute;
+            width: 12rem;
+            height: 1.7rem;
+            left: 2rem;
+            top: 3.5rem;
+
+            border: 0.5px solid #7d7d7d;
+            box-sizing: border-box;
+        }
+
+        input::-webkit-input-placeholder{
+            font-size: 13px;
+        }
+
+        .addbox {
+            position: absolute;
+            width: 25rem;
+            height: 10rem;
+            left: 2rem;
+            top: 4rem;
+            padding-top: 1rem;
+            padding-left: 2rem;
+            background: #ffffff;
+            border-radius: 10px;
+        }
+
+        .addbox1 {
+            position: absolute;
+            width: 25rem;
+            height: 6rem;
+            left: 2rem;
+            top: 15rem;
+            padding-left: 2rem;
+            padding-top: 1rem;
+            background: #ffffff;
+            border-radius: 10px;
+        }
+
+        .rectangle {
+            position: absolute;
+            width: 30rem;
+            height: 53rem;
+            left: 0rem;
+            top: 3.5rem;
+
+            background: #e8ecf7;
+        }
+
+        .refribox {
+            position: absolute;
+            width: 70rem;
+            height: 60rem;
+            left: 35.13rem;
+            top: 0rem;
+            padding-left: 2rem;
+            padding-top: 1rem;
+            background: #ffffff;
+
+        }
+
+        #container {
+            position: absolute;
+            top: 11rem;
+            width: 55rem;
+            font-size: 10px;
+        }
+
+        #seasoningbox {
+            position: absolute;
+            top: 40rem;
+            left: 35rem;
+        }
+
+        .card-title{
+            font-size: 16px;
+        }
+        .card-subtitle{
+            font-size: 15px;
+            color: darkgray;
+        }
+        .cor a{
+            font-size: 10px;
+        }
+
+        .card{
+            margin: .1rem;
+        }
+
+        .ingredient_name{
+            position: absolute;
+            
+        }
+
+        .btn{
+            font-size: 13px;
+            height: 1.9rem;
+            width: 3rem;
+        }
+
+        #btn1{
+            position: absolute;
+            top: .4rem;
+            left: -.8rem;
+        }
+
+        #btn2{
+            position: absolute;
+            top: .4rem;
+            left: 1.2rem;
+        }
+
+        .opt{
+            font-size: 13px;
+        }
+
+    </style>
+</head>
+
+<body style="margin-top: 100px; margin-left: 550px">
+    <div class="container" id="container">
+        <div id="hello">Ingredients</div>
+        <br />
+        {%if first%} {%for ingredient, date in first%}
+        <div style="display: inline-block">
+            <div class="card" style="width: 10rem">
+                <div class="card-body">
+                    <p class="card-title">{{ingredient}}</h5>
+                    <p class="card-subtitle mb-2 text-muted">{{date}}</h6>
+                    <div class="cor">
+                        <a href="{% url 'edit' ingredient %}" class="card-link">수정</a>
+                        <a href="{% url 'delete' ingredient %}" class="card-link">삭제</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+        <br />------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br />
+        {%endif%} {%if second%} {%for ingredient, date in second%}
+        <div style="display: inline-block">
+            <div class="card" style="width: 10rem">
+                <div class="card-body">
+                    <p class="card-title">{{ingredient}}</h5>
+                    <p class="card-subtitle mb-2 text-muted">{{date}}</h6>
+                    <div class="cor">
+                        <a href="{% url 'edit' ingredient %}" class="card-link">수정</a>
+                        <a href="{% url 'delete' ingredient %}" class="card-link">삭제</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+        <br />------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br />
+        {%endif%} {%if third%} {%for ingredient, date in third%}
+        <div style="display: inline-block">
+            <div class="card" style="width: 10rem">
+                <div class="card-body">
+                    <p class="card-title">{{ingredient}}</h5>
+                    <p class="card-subtitle mb-2 text-muted">{{date}}</h6>
+                    <div id="cor">
+                        <a href="{% url 'edit' ingredient %}" class="card-link">수정</a>
+                        <a href="{% url 'delete' ingredient %}" class="card-link">삭제</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+        <br />------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br />
+        {%endif%} {%if final%} {%for ingredient, date in final%}
+        <div style="display: inline-block">
+            <div class="card" style="width: 10rem">
+                <div class="card-body">
+                    <h5 class="card-title">{{ingredient}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{date}}</h6>
+                    <div class="cor">
+                        <a href="{% url 'edit' ingredient %}" class="card-link">수정</a>
+                        <a href="{% url 'delete' ingredient %}" class="card-link">삭제</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+        <br />------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br />
+        {%endif%}
+    </div>
+    <div id="seasoningbox">
+        <br />
+        <div id="seasoningtitle">Seasonings</div>
+        {%for i in seasoning%}
+        <div style="display: inline-block">
+            <div class="card" style="width: 8rem; height: 3.5rem; text-align: center;">
+                <div class="card-body" >
+                    <h5 class="card-title">{{i}}</h5>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+
+    <div class="rectangle">
+        <div class="addbox">
+            <div class="name">Add Ingredient</div>
+            <form action="{% url 'update' %}" method="POST">
+                {% csrf_token %}
+
+                <input id="ingredient_name" type="text" name="ingredient_name" placeholder="재료를 추가해주세요" />
+                <br />
+                <br />
+                <div class="calender">
+                    <input id="date" type="date" value="{{buy_date}}" name="date" />
+                </div>
+                <br /><br />
+                <label class="opt"><input type="checkbox" name="deadline" value="buy"  id="purchase" />구매한 날짜
+                </label>
+                <label class="opt"><input type="checkbox" name="deadline" value="finish"  id="valid" />유통기한
+                </label>
+                <div class="buttonspace1">
+                    <input id="btn1" type="submit" class="btn btn-primary" value="추가" />
+                </div>
+            </form>
+        </div>
+
+        <div class="addbox1">
+            <div class="name">Add Seasoning</div>
+            <form action="{% url 'seasoning_update' %}" method="GET">
+                {% csrf_token %}
+                <br />
+                <input id="seasoning_name" type="text" name="seasoning_name" placeholder="조미료를 추가해주세요" />
+                <br />
+                <div class="buttonspace">
+                    <input id="btn2" type="submit" class="btn btn-primary" value="추가" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}

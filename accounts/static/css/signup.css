@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-v20-latin-regular.woff") format("woff");
+}
+
+#hello {
+  position: absolute;
+  width: 30.44rem;
+  height: 4.63rem;
+  left: 47.13rem;
+  top: 10.63rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.44rem;
+  line-height: 4rem;
+  text-align: center;
+
+  color: #000000;
+
+  border: 0rem solid #000000;
+}
+
+#name {
+  position: absolute;
+  width: 11.44rem;
+  height: 1.69rem;
+  left: 4694rem;
+  top: 18.75rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.38rem;
+  line-height: 1.63rem;
+
+  color: #000000;
+}
+
+#email {
+  position: absolute;
+  width: 11.44rem;
+  height: 1.81rem;
+  left: 47.94rem;
+  top: 26rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.38rem;
+  line-height: 1.63rem;
+
+  color: #000000;
+}
+
+input[type="text"] {
+  position: absolute;
+  width: 474px;
+  height: 61px;
+  left: 767px;
+  top: 335px;
+
+  border: 0.5px solid #7d7d7d;
+  box-sizing: border-box;
+}
+
+input[type="password"] {
+  position: absolute;
+  width: 474px;
+  height: 61px;
+  left: 767px;
+  top: 567px;
+
+  border: 0.5px solid #7d7d7d;
+  box-sizing: border-box;
+}
+
+#pwconf {
+  position: absolute;
+  width: 11.44rem;
+  height: 1.69rem;
+  left: 47.94rem;
+  top: 40.5rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.38rem;
+  line-height: 1.63rem;
+
+  color: #000000;
+}
+
+.subbtn {
+  position: absolute;
+  width: 29.63rem;
+  height: 3.81rem;
+  left: 47.94rem;
+  top: 49.63rem;
+
+  background: #3974d8;
+
+  border: 0rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.38rem;
+  line-height: 1.63rem;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.rectangle {
+  position: absolute;
+  width: 35.13rem;
+  height: 64rem;
+  left: 0rem;
+  top: 0rem;
+
+  background: #e8ecf7;
+}

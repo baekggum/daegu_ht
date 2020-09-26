@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>kitchen</title>
+</head>
+
+<body>
+    <div id="page_all">
+        <div id="sect">
+            <div id="logo"></div>
+            <div id="welcome">Welcome Back</div>
+            <div id="likelion">
+                <img src="{% static 'images/BI_1.png' %}" width="50px" id="BI_1">
+                &nbsp<div id="with">Log in with</div>&nbsp&nbsp
+                <img src="{% static 'images/letter.png' %}" width="140px" id="BI_2">
+            </div>
+            <div class="email-line">
+                <div id="line1"></div>
+                <div id="text">or log in with email</div>
+                <div id="line2"></div>
+            </div><br><br>
+            <form method="POST" action="{% url 'login' %}">
+
+                {% csrf_token %}
+                <div id="address">Email Address<br>
+                    <input name="username" type="text" id="addr" placeholder="Email Address">
+                </div>
+
+                <br>
+                <div id="password">Password<br>
+                    <input name="password" type="password" id="pswd" placeholder="Password">
+                </div>
+                <br>
+                <div id="keepbox">
+                    <input type="checkbox" id="keep">Keep me logged in
+                </div>
+                <br>
+                <div id="submit">
+                    <input type="submit" class="subbtn" value="Log In">
+                </div>
+            </form><br><br>
+            <div id="line3"></div><br>
+            <div id="question_signup">Don't have an account?
+                <a id="signup" href="{% url 'signup' %}">Sign up</a>
+            </div>
+            
+        </div>
+        <div id="side">
+
+        </div>
+    </div>
+</body>
+
+</html>

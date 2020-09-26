@@ -1,0 +1,252 @@
+.nanumsquare {
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+/* html {
+    scroll-behavior: smooth;
+} */
+
+@font-face {
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-family: 'GmarketSansBold';
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* background-color: black; */
+    overflow-x: hidden;
+}
+
+/* header 시작 */
+
+.main {
+    padding-left: 10rem;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: none;
+    height: 6rem;
+    float: left;
+    padding-left: 10rem;
+    padding: 0 10rem 0 10rem;
+    z-index: 9999;
+}
+
+/* 상단배너 a태그 */
+
+.header_com a {
+    text-decoration: none;
+}
+
+/* 유저 프로파일 이미지 밖 div */
+
+#profile_div {
+    border-radius: 70%;
+    overflow: hidden;
+    width: 3rem;
+    height: 3rem;
+    float: right;
+    position: absolute;
+    right: 25rem;
+    top: 30%;
+}
+
+/* 로고 */
+
+#logo {
+    float: left;
+    position: absolute;
+    top: 38%;
+    left: 9rem;
+    font-family: 'NanumSquare', sans-serif !important;
+    font-size: 25px;
+}
+
+/* 유저 프로파일 이미지 */
+
+#profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 유저이름 */
+
+#username {
+    float: right;
+    position: absolute;
+    top: 38%;
+    right: 30rem;
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+#username_a:visited, #logo_a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+/* header 끝 */
+
+/* page1 시작 */
+
+#gif1 {
+    position: absolute;
+    top: 7rem;
+    right: 5rem;
+    width: 35rem;
+    height: 35rem;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+
+#circle_blue {
+    background-color: #3974d8;
+    border-radius: 70%;
+    z-index: -1;
+    position: absolute;
+    top: 2rem;
+    right: -2rem;
+    width: 53rem;
+    height: 53rem;
+}
+
+#circle_yellow {
+    background-color: #ffd359;
+    border-radius: 70%;
+    z-index: 3;
+    position: absolute;
+    top: 38rem;
+    right: 42rem;
+    width: 15rem;
+    height: 15rem;
+}
+
+#circle_darkblue {
+    background-color: #393341;
+    border-radius: 70%;
+    z-index: 3;
+    position: absolute;
+    top: 6rem;
+    right: 3rem;
+    width: 6rem;
+    height: 6rem;
+}
+
+#circle_gray {
+    background-color: #ececec;
+    border-radius: 70%;
+    z-index: 3;
+    position: absolute;
+    top: 33rem;
+    right: 52rem;
+    width: 5rem;
+    height: 5rem;
+}
+
+#rectangle {
+    background-color: #3974d8;
+    z-index: 1;
+    position: absolute;
+    top: 45.3rem;
+    right: 0rem;
+    width: 35rem;
+    height: 4.5rem;
+}
+
+#title1 {
+    position: absolute;
+    top: 9rem;
+    left: 9rem;
+}
+
+#title1 p{
+    font-family: 'GmarketSansBold';
+    font-size: 60px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#content1 {
+    position: absolute;
+    top: 25rem;
+    left: 9rem;
+}
+
+#content1 p{
+    font-family: 'NanumSquare', sans-serif !important;
+    font-size: 20px;
+}
+
+.scroll{
+    position: absolute;
+    top: 30rem;
+    left: 9rem;
+    width: 5rem;
+    height: 5rem;
+    text-decoration: none;
+}
+
+#join{
+    position: absolute;
+    top: 30rem;
+    left: 14rem;
+    width: 5rem;
+    height: 5rem;
+    text-decoration: none;
+}
+
+
+/* page1 끝 */
+
+/* page2 시작 */
+
+#gif2{
+    position: absolute;
+    top: 80rem;
+    left: 10rem;
+    z-index: 2;
+}
+
+#rectangle_yellow{
+    position: absolute;
+    width: 100%;
+    height: 64rem;
+    top: 100rem;
+    left: 0;
+    /* background-color: ; */
+}
+
+#target1 {
+    position: absolute;
+    top: 62rem;
+    right: 9rem;
+}
+
+#target1 p{
+    font-family: 'GmarketSansBold';
+    font-size: 60px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#content2 {
+    position: absolute;
+    top: 78rem;
+    right: 9rem;
+}
+
+#content2 p{
+    font-family: 'NanumSquare', sans-serif !important;
+    font-size: 20px;
+}
+
+
+
+/* page2 끝 */

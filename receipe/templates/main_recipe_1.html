@@ -1,0 +1,771 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<head>
+  <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/base1.css' %}" /> -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main_recipe.css' %}" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- use autocomplete jQuery ui -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+<style>
+  html,
+  body {
+    margin: 0;
+    height: 88rem;
+    /* background: -webkit-linear-gradient(to bottom, rgb(245, 245, 245), rgb(236, 236, 236));  */
+    /* background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(236, 236, 236)); */
+    /* background: rgb(245, 245, 245); */
+  }
+
+  @font-face {
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-family: 'GmarketSansBold';
+    font-weight: normal;
+    font-style: normal;
+}
+#recipe_body {
+    position: absolute;
+    /* width: 1000rem; */
+    height: 80%;
+    top: 6rem;
+    left: -5rem;
+    border: none;
+    background-color: none;
+  }
+
+
+  #result_message {
+    width: 100%;
+    height: 2rem;
+    font-family: 'NanumSquare';
+    font-size: 30px;
+    /* border: 1px solid black; */
+  }
+
+  #result_message p {
+    font-family: 'NanumSquare', sans-serif !important;
+    font-weight: bold;
+    font-style: normal;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    padding-left: 2rem;
+  }
+  #center_recipes {
+    padding: 0 2rem 0 2rem;
+    position: relative;
+    top: -.5rem;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+
+  #center_recipes a {
+    text-decoration: none;
+    color: black;
+  }
+ 
+  #center_recipe a {
+    text-decoration: none;
+  }
+
+  #center_recipes #recipe {
+    flex-direction: row;
+    min-width: 13.5rem;
+    max-width: 13.5rem;
+    height: 15rem;
+    border: 1px solid rgb(240, 240, 240);
+    /* border: none; */
+    margin-top: 3rem;
+    /* background-color: rgb(248, 248, 248); */
+    /* border: none; */
+    background-color: #ffffff;
+    padding: 0 .5rem 0 .5rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 40px .5px rgba(0, 0, 0, 0.06);
+  }
+
+
+  #recipe #inrecipe_pic {
+    border: none;
+    margin: 0 auto;
+    top: -.5rem;
+    position: relative;
+    height: 7.5rem;
+    width: 7.5rem;
+    overflow: hidden;
+    border-radius: 2px;
+    border-radius: 70%;
+
+  }
+  #recipe #inrecipe_pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #recipe #inrecipe_name {
+    height: 30%;
+    border: none;
+    font-size: 11px;
+    overflow: auto;
+    text-align: center;
+    /* padding-top: 1rem; */
+    color: #a8a8a8;
+    position: relative;
+    top: 1rem;
+  }
+  #inrecipe_title {
+    font-size: 18px;
+    font-weight: 900;
+    text-align: center;
+    font-family: 'NanumSquare', sans-serif !important;
+    height: 2rem;
+    position: relative;
+    top: .6rem;
+  }
+
+  #inrecipe_name_a{
+    text-decoration: none;
+    color: black;
+  }
+
+  #paginationbox {
+    position: absolute;
+    top: 83rem;
+    left: 23rem;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  #pagination {
+    display: inline-block;
+  }
+
+  #pagination a,
+  span {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  /* center부분 오른쪽 */
+
+  /* 토글버튼 시작  */
+
+  * {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  *:focus {
+    outline: none;
+  }
+
+  body {
+    font-family: 'NanumSquare', sans-serif !important;
+    margin: 0;
+  }
+
+  .button-cover {
+    width: 5rem;
+    height: 5rem;
+    right: 10rem;
+  }
+
+  .button-cover,
+  .knobs,
+  .layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .button {
+    position: relative;
+    top: 50%;
+    left: 30%;
+    width: 76px;
+    height: 36px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .button.r,
+  .button.r .layer {
+    border-radius: 100px;
+  }
+
+  /* .button.b2 {
+    border-radius: 2px;
+} */
+
+  .checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .knobs {
+    z-index: 2;
+  }
+
+  .layer {
+    width: 100%;
+    /* background-color: #ebf7fc; */
+    background-color: #ffffff;
+    transition: 0.3s ease all;
+    z-index: 1;
+  }
+
+  #button-3 .knobs:before {
+    content: 'All';
+    position: absolute;
+    top: 3.5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #3974d8;
+    border-radius: 50%;
+    transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+  }
+
+  #button-3 .checkbox:active+.knobs:before {
+    width: 46px;
+    border-radius: 100px;
+  }
+
+  #button-3 .checkbox:checked:active+.knobs:before {
+    margin-left: -26px;
+  }
+
+  #button-3 .checkbox:checked+.knobs:before {
+    content: 'My';
+    left: 42px;
+    background-color: #3974d8;
+  }
+
+  #button-3 .checkbox:checked~.layer {
+    background-color: #ffffff;
+  }
+
+  /* 토글버튼 끝 */
+
+  /* 검색창 시작 */
+
+  .search_bar {
+    height: 2.3rem;
+    width: 22rem;
+    /* border: 1px solid #3974d8; */
+    position: absolute;
+    top: 4.3rem;
+    left: 1.8rem;
+    font-family: 'NanumSquare', sans-serif !important;
+  }
+
+  input {
+    width: 82%;
+    height: 2.5rem;
+    font-size: 13px;
+    padding: 10px;
+    border: 0px;
+    outline: none;
+    float: left;
+    background: #ffffff;
+    border-radius: 3px;
+  }
+
+  /* 크롬 */
+  input:-ms-input-placeholder {
+    color: #a8a8a8;
+  }
+
+  /* 익스플로러 */
+  input::-webkit-input-placeholder {
+    color: #a8a8a8;
+  }
+
+  /* 파이어폭스 */
+  input::-moz-placeholder {
+    color: #a8a8a8;
+  }
+
+  #search_button {
+    width: 3.5rem;
+    height: 5.5rem;
+    /* border: 0px solid #3974d8; */
+    background: #3974d8;
+    outline: none;
+    float: right;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 13px;
+    font-family: 'NanumSquare', sans-serif !important;
+  }
+
+  #search_button:hover {
+    background: #3364b8;
+    color: #ffffff;
+    transition: all linear 0.1s;
+  }
+
+
+  /* 검색창 끝 */
+
+  #all_date {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+  }
+
+  /* My 시작 */
+
+  .all_menu2 {
+    position: absolute;
+    top: 4.5rem;
+    left: 2rem;
+    width: 21.5rem;
+    height: 25rem;
+    /* background-color: black; */
+    justify-content: space-between;
+    overflow: auto;
+  }
+
+  .menus2 {
+    width: 6.5rem;
+    height: 6rem;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: .1rem;
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+
+  #menu4 {
+    position: relative;
+  }
+
+  #all_checked {
+    font-family: 'NanumSquare', sans-serif !important;
+    font-size: 13px;
+    text-decoration: none;
+    /* cursor: pointer; */
+    position: absolute;
+    top: 2rem;
+    left: 16rem;
+  }
+
+  #all_checked:visited,
+  #delete:visited {
+    text-decoration: none;
+    color: black;
+  }
+
+  #delete {
+    font-family: 'NanumSquare', sans-serif !important;
+    font-size: 13px;
+    text-decoration: none;
+    /* cursor: pointer; */
+    position: absolute;
+    top: 2rem;
+    left: 20rem;
+  }
+
+  #recipe_search {
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-family: 'NanumSquare', sans-serif !important;
+    font-size: 13px;
+    height: 3rem;
+    width: 22rem;
+    top: 90%;
+    left: 1.8rem;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #recipe_search1 {
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-family: 'NanumSquare', sans-serif !important;
+    font-size: 13px;
+    height: 3rem;
+    width: 11rem;
+    top: 80%;
+    left: 1.5rem;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #recipe_search2 {
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-family: 'NanumSquare', sans-serif !important;
+    font-size: 13px;
+    height: 3rem;
+    width: 11rem;
+    top: 80%;
+    left: 13rem;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+  #recipe_search:hover {
+    background: #3974D8;
+    color: white;
+    transition: all 0.3s;
+  }
+
+  #recipe_search1:hover {
+    background: #3974D8;
+    color: white;
+    transition: all 0.3s;
+  }
+
+  #recipe_search2:hover {
+    background: #3974D8;
+    color: white;
+    transition: all 0.3s;
+  }
+
+  .all_menu2::-webkit-scrollbar {
+    width: 6px;
+    background-color: #ffffff;
+  }
+
+  .all_menu2::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+
+  .all_menu2::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgb(204, 204, 204);
+    cursor: pointer;
+  }
+
+  .all_menu2::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  }
+
+  .my_box {
+    font-family: 'NanumSquare', sans-serif !important;
+  }
+
+  #ingredient_name_my_div{
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    top: 2rem;
+    padding-top: 2rem;
+  }
+
+  #date_div{
+    text-align: center;
+    font-size: 12px;
+  }
+
+  /* My 끝 */
+
+.nanumsquare {
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: #ffffff; */
+    background-color: #ffffff;
+    height: 5rem;
+    float: left;
+    padding-left: 10rem;
+    padding: 0 10rem 0 10rem;
+    z-index: 9999;
+    border-bottom: 1px solid rgb(236, 236, 236);
+  }
+
+/* 상단배너 a태그 */
+
+.header_com a {
+    text-decoration: none;
+}
+
+/* 유저 프로파일 이미지 밖 div */
+
+#profile_div {
+    border-radius: 70%;
+    overflow: hidden;
+    width: 3rem;
+    height: 3rem;
+    float: right;
+    position: absolute;
+    right: 2rem;
+    top: 30%;
+}
+
+/* 로고 */
+
+#logo {
+    float: left;
+    position: absolute;
+    top: 38%;
+    left: 7rem;
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+/* 유저 프로파일 이미지 */
+
+#profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 유저이름 */
+
+#username {
+    float: right;
+    position: absolute;
+    top: 38%;
+    right: 9rem;
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+#username_a:visited, #logo_a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+.main {
+    padding-left: 10rem;
+}
+
+#refri {
+    position: fixed;
+    right: 0;
+    top: 6rem;
+    height: 39rem;
+    width: 25rem;
+    background: #E8ECF7;
+    border-radius: 40px 0 0 0;
+}
+
+#button_back {
+    position: absolute;
+    width: 6.4rem;
+    height: 1.5rem;
+    left: 2rem;
+    top: 1.5rem;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 19px;
+}
+
+#button {
+    position: absolute;
+    width: 3.7rem;
+    height: 1.8rem;
+    left: 0;
+    top: -2px;
+    background: #3974D8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 26px;
+}
+
+</style>
+
+<body>
+  <div id="recipe_body" style="width: 65%;">
+    <div id="result_message">
+      <p>&nbsp Plus 1 + in your Refrigerator</p>
+    </div>
+    <div id="center_recipes">
+      {% for recipe in posts %}
+
+        <div id="recipe">
+          <div id="inrecipe_pic">
+            <a href="{{recipe.link}}">
+              <img src="{{recipe.picture}}" style="width: 100%; height: 100%" />
+            </a>
+          </div>
+          <a href="#" id="inrecipe_name_a">
+            <div id="inrecipe_title"><p>레시피 title</p></div>
+            <div id="inrecipe_name">{{recipe.title}}</div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    <!-- {% for recipe in posts %}
+      <div style="display: inline-block">
+        <div class="card" style="width:300px; height:auto;margin:20px;">
+          <img src={{recipe.picture}} class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">{{x.title}}</h5>
+            <p class="card-text">재료: {{recipe.food_ingredient}}<br>작성자: {{recipe.author}}</p>
+            <a href="{{recipe.link}}" class="btn btn-primary">레시피보기</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %} -->
+  </div>
+  <br /><br />
+  <div id="paginationbox">
+    <div id="pagination">
+      {%if posts.has_previous%}
+      <a href="?page=1">First</a>
+      <a href="?page={{posts.previous_page_number}}">Previous</a>
+      {%endif%}
+
+      <span>{{posts.number}}</span>
+      <span>of</span>
+      <span>{{posts.paginator.num_pages}}</span>
+
+      {%if posts.has_next%}
+      <a href="?page={{posts.next_page_number}}">Next</a>
+      <a href="?page={{posts.paginator.num_pages}}">Last</a>
+      {%endif%}
+    </div>
+  </div>
+  </div>
+  <div id="refri">
+    <!-- 버튼 시작  -->
+    <div class="button-cover">
+      <div class="button r" id="button-3">
+        <input type="checkbox" class="checkbox" id="check"
+          onclick="layer_toggle(document.getElementById('all')); layer_toggle(document.getElementById('my'))">
+        <div class="knobs"></div>
+        <div class="layer"></div>
+      </div>
+    </div>
+    <!-- 버튼 끝 -->
+    <div class="all" id="all" style="display: block;">
+      <!-- 검색창 시작 -->
+      <div class="search_bar">
+        <form action="{% url 'update' %}" method="POST">
+          {% csrf_token %}
+          <input type="text" id='ingredient_name' placeholder="재료를 입력하세요" name="ingredient_name">
+          <input id="all_date" type="date" value={{buy_date}} name="date">
+          <input id="search_button" type="submit" class="btn btn-primary" value="추가">
+        </form>
+        <!-- <input type="search" id="search" placeholder="재료를 입력하세요"></input>
+        <button id="search_button" type="submit"><span>검색</span> -->
+        <div class="transition"></div>
+        </button>
+      </div>
+      <!-- 검색창 끝 -->
+      <!-- <div class="all_menu1">
+        <div class="menus1" id="menu1">
+          <p class="all_box" id="ingredient_name_all">재료명</p>
+          <a href="#" class="all_box" id="add">
+            <p> 추가</p>
+          </a>
+        </div> -->
+      <!-- <div class="menus1" id="menu2"></div>
+            <div class="menus1" id="menu3"></div> -->
+    </div>
+    <div class="my" id="my" style="display: none;">
+      <a href="#" id="all_checked">
+        <p>전체선택</p>
+      </a>
+      <a href="#" id="delete">
+        <p>선택삭제</p>
+      </a>
+      <div class="all_menu2">
+        <script language="JavaScript"></script>
+        {% for L in all_ingredient %}
+        {% for ingredient,valid_date in L %}
+        <div class="menus2" id="menu4">
+          <input type="checkbox" name="ingredient" value="{{ingredient}}" style="width:12px;height:12px;margin:5px;" >
+          <div class="my_box" id="ingredient_name_my_div">{{ingredient}}</div>
+          <div id="date_div"><p class="my_box">{{valid_date}} </p></div>
+        </div>
+        {% endfor %}
+        {% endfor %}
+        <!-- <div class="menus2" id="menu5"></div>
+            <div class="menus2" id="menu6"></div> -->
+      </div>
+      <a href ="{% url 'recipes1' %}"><button id="recipe_search1">Plus 1 + Your Ingredient</button></a>    
+      <a href ="{% url 'recipes2' %}"><button id="recipe_search2">Plus 2 + Your Ingredient</button></a>
+      <a href ="{% url 'recipes' %}"><button id="recipe_search" type="submit">레시피 검색</button></a>
+  </div>
+
+  <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+  <script>
+    function textLengthOverCut(txt, len, lastTxt) {
+      if (len == "" || len == null) { // 기본값
+        len = 20;
+      }
+      if (lastTxt == "" || lastTxt == null) { // 기본값
+        lastTxt = "...";
+      }
+      if (txt.length > len) {
+        txt = txt.substr(0, len) + lastTxt;
+      }
+      return txt;
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#ingredient_name").autocomplete({
+        source: "{% url 'update' %}"
+      });
+    });
+  </script>
+</body>
+{% endblock %}

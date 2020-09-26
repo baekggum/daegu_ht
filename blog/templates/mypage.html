@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/mypage.css' %}"> -->
+    <style>
+        #container {
+            margin-top: 6rem;
+            display: flex;
+            width: 90%;
+            height: 55rem;
+        }
+
+        #left_box {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 30%;
+            height: 100%;
+        }
+
+        #left_box_in{
+            width: 80%;
+            height: 90%;
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+
+        #right_box {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            height: 100%;
+            justify-content: space-around;
+            align-content: center;
+        }
+
+        #right_box_up{
+            margin-left: 10%;
+            border: 1px solid black;
+            width: 80%;
+            height: 40%;
+            border-radius: 20px;
+        }
+
+        #right_box_dn{
+            margin-left: 10%;
+            border: 1px solid black;
+            width: 80%;
+            height: 40%;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="container">
+        <div id="left_box">
+            <div id="left_box_in"></div>
+        </div>
+        <div id="right_box">
+            <div id="right_box_up"></div>
+            <div id="right_box_dn"></div>
+        </div>
+    </div>
+</body>
+{% endblock %}

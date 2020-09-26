@@ -1,0 +1,822 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"> -->
+    <style>
+      .nanumsquare {
+  font-family: "NanumSquare", sans-serif !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
+    format("woff");
+  font-family: "GmarketSansBold";
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* background-color: black; */
+  overflow-x: hidden;
+}
+
+/* header 시작 */
+
+.main {
+  padding-left: 10rem;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: none;
+  height: 6rem;
+  float: left;
+  padding-left: 10rem;
+  padding: 0 10rem 0 10rem;
+  z-index: 9999;
+}
+
+/* 상단배너 a태그 */
+
+.header_com a {
+  text-decoration: none;
+}
+
+/* 유저 프로파일 이미지 밖 div */
+
+#profile_div {
+  border-radius: 70%;
+  overflow: hidden;
+  width: 3rem;
+  height: 3rem;
+  float: right;
+  position: absolute;
+  right: 25rem;
+  top: 30%;
+}
+
+/* 로고 */
+
+#logo {
+  float: left;
+  position: absolute;
+  top: 38%;
+  left: 9rem;
+  font-family: "NanumSquare", sans-serif !important;
+  font-size: 25px;
+}
+
+/* 유저 프로파일 이미지 */
+
+#profile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 유저이름 */
+
+#username {
+  float: right;
+  position: absolute;
+  top: 38%;
+  right: 30rem;
+  font-family: "NanumSquare", sans-serif !important;
+}
+
+#username_a:visited,
+#logo_a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+/* header 끝 */
+
+/* page1 시작 */
+
+#gif1 {
+  position: absolute;
+  top: 7rem;
+  right: 5rem;
+  width: 35rem;
+  height: 35rem;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+}
+
+#circle_blue {
+  background-color: #3974d8;
+  border-radius: 70%;
+  z-index: -1;
+  position: absolute;
+  top: 2rem;
+  right: -2rem;
+  width: 53rem;
+  height: 53rem;
+}
+
+#circle_yellow {
+  background-color: #ffd359;
+  border-radius: 70%;
+  z-index: 3;
+  position: absolute;
+  top: 38rem;
+  right: 42rem;
+  width: 15rem;
+  height: 15rem;
+}
+
+#circle_darkblue {
+  background-color: #393341;
+  border-radius: 70%;
+  z-index: 3;
+  position: absolute;
+  top: 6rem;
+  right: 3rem;
+  width: 6rem;
+  height: 6rem;
+}
+
+#circle_gray {
+  background-color: #ececec;
+  border-radius: 70%;
+  z-index: 3;
+  position: absolute;
+  top: 33rem;
+  right: 52rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+#rectangle {
+  background-color: #3974d8;
+  z-index: 1;
+  position: absolute;
+  top: 45.3rem;
+  right: 0rem;
+  width: 35rem;
+  height: 4.5rem;
+}
+
+#title1 {
+  position: absolute;
+  top: 9rem;
+  left: 9rem;
+}
+
+#title1 p {
+  font-family: "GmarketSansBold";
+  font-size: 60px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+#content1 {
+  position: absolute;
+  top: 25rem;
+  left: 9rem;
+}
+
+#content1 p {
+  font-family: "NanumSquare", sans-serif !important;
+  font-size: 20px;
+}
+
+.scroll {
+  position: absolute;
+  top: 30rem;
+  left: 9rem;
+  width: 5rem;
+  height: 5rem;
+  text-decoration: none;
+}
+
+#join {
+  position: absolute;
+  top: 30rem;
+  left: 14rem;
+  width: 5rem;
+  height: 5rem;
+  text-decoration: none;
+}
+
+/* page1 끝 */
+
+/* page2 시작 */
+
+#gif2 {
+  position: absolute;
+  top: 80rem;
+  left: 10rem;
+  z-index: 2;
+}
+
+#rectangle_yellow {
+  position: absolute;
+  width: 40%;
+  height: 50rem;
+  top: 100rem;
+  left: 0;
+  background-color: #ffd359;
+}
+
+#scroll {
+  position: absolute;
+  top: 82rem;
+}
+
+#target1 {
+  position: absolute;
+  top: 85rem;
+  right: 15.5rem;
+}
+
+#target1 p {
+  font-family: "GmarketSansBold";
+  font-size: 60px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+#content2 {
+  position: absolute;
+  top: 95rem;
+  right: 15.5rem;
+}
+
+#content2 p {
+  font-family: "NanumSquare", sans-serif !important;
+  font-size: 20px;
+}
+
+#login1 {
+  position: absolute;
+  width: 29.63rem;
+  height: 3.81rem;
+  left: 8rem;
+  top: 32.56rem;
+
+  background: #3974d8;
+
+  border: 0rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: regular;
+  font-size: 1.38rem;
+  line-height: 1.63rem;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+/* #card {
+    position: relative;
+    width: 29.63rem;
+    height: 3.81rem;
+    left: 8rem;
+    top: 32.56rem;
+} */
+
+/* page2 끝 */
+
+
+#innercard {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  width: 29.63rem;;
+  height: 40rem;
+
+  position: absolute;
+  left: 8rem;
+  top: 33rem;
+}
+
+#text {
+  position: relative;
+  width: 100%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.94rem;
+  line-height: 1.13rem;
+  /* text-align: center; */
+  letter-spacing: 0.345em;
+  text-transform: uppercase;
+
+  color: #7d7d7d;
+}
+
+#address,
+#password {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.3rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.38rem;
+  line-height: 1.63rem;
+  text-align: start;
+  color: #000000;
+}
+
+#addr,
+#pswd {
+  position: relative;
+  width: 29rem;
+  height: 4rem;
+  margin-top: 1rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.13rem;
+  line-height: 1.31rem;
+  letter-spacing: 0.045em;
+  color: #7d7d7d;
+
+  border: 0.03rem solid #7d7d7d;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.subbtn {
+  /*html의 class는 css에서 .으로 받아옴*/
+  position: relative;
+  width: 100%;
+  height: 4rem;
+
+  background: #3974d8;
+
+  border: 0rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.38rem;
+  line-height: 1.63rem;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+
+/* #su_question{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 40rem;
+  height: 100rem;
+  left: 8rem;
+  top: 32.56rem;
+
+  position: relative;
+} */
+
+#hzline {
+  position: absolute;
+  width: 29.63rem;
+  height: 0rem;
+  left: 7.85rem;
+  top: 55.88rem;
+
+  border: 0.03rem solid #7d7d7d;
+}
+
+#question1 {
+  position: absolute;
+  width: 40rem;
+  height: 1.56rem;
+  left: 0rem;
+  top: 57rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.13rem;
+  line-height: 1.31rem;
+  text-align: center;
+  letter-spacing: 0.045em;
+
+  color: #646464;
+}
+
+#anch1 {
+  position: absolute;
+  width: 12rem;
+  height: 1.5rem;
+  left: 24rem;
+  top: 57rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.13rem;
+  line-height: 1.31rem;
+  text-align: center;
+  letter-spacing: 0.045em;
+
+  color: #612b7a;
+}
+
+/* page3 */
+
+#ycircle1 {
+  position: absolute;
+  width: 1.63rem;
+  height: 1.63rem;
+  left: 16.38rem;
+  top: 107.81rem;
+  border-radius: 50%;
+  z-index: 3;
+
+  background: #ffd359;
+}
+
+#wcircle1 {
+  position: absolute;
+  width: 2.81rem;
+  height: 2.81rem;
+  left: 15.81rem;
+  top: 107.25rem;
+  border-radius: 50%;
+  z-index: 2;
+
+  background: #ffffff;
+}
+
+#line1 {
+  position: absolute;
+  width: 9rem;
+  height: 0rem;
+  left: 12.63rem;
+  top: 113.06rem;
+  z-index: 1;
+
+  border: 0.06rem solid #7a7a7a;
+  transform: rotate(90deg);
+}
+
+#bcircle1 {
+  position: absolute;
+  width: 1.63rem;
+  height: 1.63rem;
+  left: 16.38rem;
+  top: 117.06rem;
+  border-radius: 50%;
+
+  background: #7a7a7a;
+}
+
+#line2 {
+  position: absolute;
+  width: 9rem;
+  height: 0rem;
+  left: 12.63rem;
+  top: 123.06rem;
+
+  border: 0.06rem solid #7a7a7a;
+  transform: rotate(90deg);
+  z-index: 2;
+}
+
+#bcircle2 {
+  position: absolute;
+  width: 1.63rem;
+  height: 1.63rem;
+  left: 16.38rem;
+  top: 126.69rem;
+  border-radius: 50%;
+
+  background: #7a7a7a;
+}
+
+#text1 {
+  position: absolute;
+  width: 10.56rem;
+  height: 2.25rem;
+  left: 19.88rem;
+  top: 107.5rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+
+  color: #000000;
+}
+
+#text2 {
+  position: absolute;
+  width: 10.56rem;
+  height: 2.25rem;
+  left: 19.88rem;
+  top: 117rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+
+  color: rgba(0, 0, 0, 0.4);
+}
+
+#text3 {
+  position: absolute;
+  width: 10.56rem;
+  height: 2.25rem;
+  left: 19.88rem;
+  top: 126.63rem;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+
+  color: rgba(0, 0, 0, 0.4);
+}
+  #contents {
+            display: flex;
+            height: 100%;
+
+
+        }
+
+#hello {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    top: 92.63rem;
+    left: 46rem;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.44rem;
+    line-height: 4rem;
+    text-align: center;
+
+    color: #000000;
+
+    border: 0rem solid #000000;
+}
+
+#inhello{
+    margin-top: 10%;
+    width: 36rem;
+}
+
+#email {
+    position: relative;
+    margin-top: 20%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.38rem;
+    line-height: 1.63rem;
+
+    color: #000000;
+}
+
+#email::-webkit-scrollbar,
+#pw::-webkit-scrollbar,
+#pwconf::-webkit-scrollbar,
+#intext::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera*/
+}
+
+input[type="text"] {
+    position: relative;
+
+    width: 36rem;
+    height: 4rem;
+    border: 0.5px solid #7d7d7d;
+    box-sizing: border-box;
+}
+
+input[type="password"] {
+    position: relative;
+
+    width: 36rem;
+    height: 4rem;
+    border: 0.5px solid #7d7d7d;
+    box-sizing: border-box;
+}
+
+#pw {
+    position: relative;
+    margin-top: 5%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.38rem;
+    line-height: 1.63rem;
+
+    color: #000000;
+}
+
+#pwconf {
+    position: relative;
+    margin-top: 5%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.38rem;
+    line-height: 1.63rem;
+
+    color: #000000;
+}
+
+#intext {
+    text-align: start;
+}
+
+#ebox,
+#pwbox1,
+#pwconfbox {
+    padding: 10px 10px;
+    font-size: 20px;
+}
+
+#signupbtn {
+    position: relative;
+    width: 36rem;
+    height: 4rem;
+    background: #3974d8;
+    margin-top: 5%;
+    border: 0rem;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.38rem;
+    line-height: 1.63rem;
+
+    text-align: center;
+
+    color: #ffffff;
+}
+
+    </style>
+    <!-- <script src="{% static 'js/index.js' %}"></script> -->
+    <title>index</title>
+</head>
+<body>
+    <header>
+        <div class="header_com" id="logo"><a href="#" id="logo_a">MYFREE</a></div>
+        <!-- <button><a href="#" id="login">Sign in</a></button>
+        <button><a href="#" id="sign_up">Sign up</a></button> -->
+    </header>
+    <div id="page1">
+        <div id="gif1_div"><img id="gif1" src="{% static 'images/ezgif.com-gif-maker2.gif' %}" id="page1gif"></img></div>
+        <div id="circle_blue"></div>
+        <div id="circle_darkblue"></div>
+        <div id="circle_yellow"></div>
+        <div id="circle_gray"></div>
+        <!-- <div id="rectangle"></div> -->
+        <div id="title1"><p>MAKE YOUR<br>FRIDGE<br>ENJOYABLE</p></div>
+        <div id="content1"><p>Pull up your ingredients,<br>bring our recipes.<br>Your life will be so endlessly delicious.</p></div>
+        <!-- <button><a href="#target1" class="scroll">View Details</a></button>
+        <button><a href="{% url 'login' %}" id="join">Login</a></button> -->
+
+
+        <!-- <div id="likelion">
+            <img src="{% static 'images/BI_1.png' %}" width="50px" id="BI_1">
+            &nbsp<div id="with">Log in with</div>&nbsp&nbsp
+            <img src="{% static 'images/letter.png' %}" width="140px" id="BI_2">
+        </div> -->
+        <!-- <input class="subbtn" type="button" value="Log In with Email"> -->
+        <button id="login1">Log In with Email</button>
+
+
+        <div id="card" style="display: none;">
+          <div id="innercard">
+
+            <form method="POST" action="{% url 'login' %}">
+
+                {% csrf_token %}
+                <div id="address">Email Address<br>
+                    <input name="username" type="text" id="addr" placeholder="Email Address">
+                </div>
+                <br>
+                <div id="password">Password<br>
+                    <input name="password" type="password" id="pswd" placeholder="Password">
+                </div>
+                <br>
+                <div id="submit">
+                    <input type="submit" class="subbtn" value="Log In">
+                </div>
+                
+            </form><br><br>
+          </div>
+          
+            <div id="line">
+              <div id="hzline"></div>
+              <div id="su_qustion">
+                <div id="question1">Don't have an account? </div>
+                <a href="#scroll" class="scroll" id="anch1">Sign up</a>
+              </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <div id="page2">
+        <div id="gif2_div"><img id="gif2" src="{% static 'images/ezgif.com-gif-maker (1).gif' %}"></img></div>
+        <div id="rectangle_yellow"></div>
+        <div id="scroll"></div>
+        <div id="target1"  align="right"><p>HELLO,<br>FRIEND!</p></div>
+        <div id="content2" align="right"><p>Please fill out the form below<br>to let us know who you are.</p></div>
+    </div>
+    <div id="page3">
+
+      <div id="pbar">
+
+        <div id=ycircle1></div>
+        <div id="wcircle1"></div>
+        <div id="line1"></div>
+        <div id="bcircle1"></div>
+        <div id="line2"></div>
+        <div id="bcircle2"></div>
+        <div id="text1">Your profile</div>
+        <div id="text2">Kitchen basics</div>
+        <div id="text3">Confirm</div>
+
+      </div>
+      <div id="contents"></div>
+
+        <div id="hello">
+
+          <div id="inhello">
+              
+              <!-- Hello, Friend! -->
+
+              <form method="POST" action="{% url 'signup' %}">
+                  {% csrf_token %}
+                  <div id="email">
+                      <div id="intext">Email Address</div><br>
+                      <input  name="ebox" type="text" placeholder="Email Address" size="">
+                  </div>
+                  <div id="pw">
+                      <div id="intext">Password</div><br>
+                      <input name="pwbox1" type="password" placeholder="Password">
+                  </div>
+                  <div id="pwconf">
+                      <div id="intext">Password Confirm</div><br>
+                      <input id="pwconfbox" name="password2" type="password" placeholder="Password Confirm">
+                  </div>
+                  <input id="signupbtn" class="subbtn" type="submit" value="Sign Up">
+              </form>
+
+          </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <script>
+      $(document).ready(function(){
+        $("#login1").click(function(){
+          $("#card").fadeIn(500);
+          $("#login1").fadeOut(500);
+        });
+      });
+    </script>
+</body>
+</html>

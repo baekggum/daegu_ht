@@ -1,0 +1,55 @@
+#date{
+    font-size: 12px;
+}
+#result_message{
+    width: 100%;
+    height: 7rem;
+    font-family: 'NanumSquare';
+    font-size: 30px;
+    /* border: 1px solid black; */
+}
+
+#result_message p{
+    float: left;
+}
+#center_recipes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+#center_recipes #recipe{
+    margin-top: 5%;
+    flex-direction: row;
+    min-width: 10rem;
+    max-width: 10rem;
+    height: 10rem;
+    border: 1px solid black;
+}
+
+#recipe #inrecipe_pic{
+    height: 68%;
+    width: auto;
+    border: 1px solid black;
+}
+
+#recipe #inrecipe_name{
+    height: 30%;
+    border: 1px solid black;
+}
+#paginationbox{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#pagination {
+    display: inline-block;
+}
+  
+#pagination a,span{
+   color: black;
+   float: left;
+   padding: 8px 16px;
+   text-decoration: none;
+}
+/* center부분 오른쪽 */
